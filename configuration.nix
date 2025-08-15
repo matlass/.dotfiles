@@ -76,10 +76,11 @@ in
   
   # Enable upower
   services.upower.enable = true;
-
-  services.gvfs.enable = true;
+  # Enable power-profiles-daemon
+  services.power-profiles-daemon.enable = true; 
   # Enable Zsh
   programs.zsh.enable = true;
+  services.gvfs.enable = true;
 
   # Configure console keymap
   console.keyMap = "fr";
@@ -100,15 +101,11 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim 
-    waybar
-    hyprpaper
     kitty
     alacritty
     brave
-    firefox
     htop
     btop
-    hyprlock
     nautilus
     networkmanagerapplet
     unzip
@@ -124,6 +121,7 @@ in
     discord
     jetbrains.rider 
     wofi
+  #  power-profiles-daemon
   ];
 
   fonts.packages = with pkgs; [
