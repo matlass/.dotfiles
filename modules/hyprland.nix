@@ -179,7 +179,7 @@ in
       ];
 
       "$mainMod" = "SUPER";
-      "$terminal" = "alacritty";
+      "$terminal" = "kitty";
       "$fileManager" = "nautilus";
       "$menu" = "wofi --show drun --style ~/.config/wofi/style.css";
     };
