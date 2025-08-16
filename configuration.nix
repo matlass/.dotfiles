@@ -35,7 +35,7 @@ in
       };
     };
   };
-
+  programs.kdeconnect.enable = true;
   security.polkit.enable = true;
 
   networking.hostName = "bok"; # Define your hostname.
@@ -102,7 +102,7 @@ in
   environment.systemPackages = with pkgs; [
     vim 
     kitty
-    alacritty
+    hyprlock
     brave
     htop
     btop
