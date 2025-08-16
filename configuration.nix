@@ -121,7 +121,7 @@ in
     discord
     jetbrains.rider 
     wofi
-  #  power-profiles-daemon
+    yazi
   ];
 
   fonts.packages = with pkgs; [
