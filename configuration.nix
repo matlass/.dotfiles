@@ -155,7 +155,7 @@ in
   nix.gc = {
     automatic = true;
     dates = "daily";
-    options = "--delet-older-that 7d";
+    options = "--delet-older-that 2d";
   };
 
   # Automatic updating
