@@ -33,6 +33,10 @@ in
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland";
         user = "greeter";
       };
+      initial_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland";
+        user = "matthieu";
+      };
     };
   };
   programs.kdeconnect.enable = true;
