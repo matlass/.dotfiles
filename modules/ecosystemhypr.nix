@@ -297,7 +297,7 @@ in
 
     background {
         monitor =
-        path = ~/Wallpaper/silouette_montagne.jpg
+        path = ~/.config/nixos/modules/nixos_ascii_wallpapaer.jpg 
 
         color = rgb(0,0,0) # color will be rendered initially until path is available
 
