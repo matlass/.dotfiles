@@ -52,6 +52,9 @@
     vimAlias = true;
     vimdiffAlias = true;
     withNodeJs = true;
+    extraConfig = "
+    set relativenumber
+    ";
   };
 
 
