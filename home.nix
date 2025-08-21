@@ -5,6 +5,7 @@
     ./modules/hyprland.nix
     ./modules/waybar.nix
     ./modules/ecosystemhypr.nix
+#    ./modules/neovim.nix
   ];
   
   home.username = "matthieu";
