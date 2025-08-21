@@ -9,7 +9,6 @@ in
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # Bootloader
   boot.loader.systemd-boot.enable = false;
   boot.loader.grub.enable = true;
@@ -26,11 +25,11 @@ in
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd hyprland";
         user = "greeter";
       };
       initial_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd hyprland";
         user = "matthieu";
       };
     };

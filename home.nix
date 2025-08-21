@@ -15,8 +15,8 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch -I nixos-config=$HOME/.config/nixos/configuration.nix";
-      nru = "sudo nixos-rebuild switch -I nixos-config=$HOME/.config/nixos/configuration.nix --upgrade";
+      nrs = "sudo nixos-rebuild switch --flake ~/.config/nixos/";
+      nru = "sudo nixos-rebuild switch --flake ~/.config/nixos/configuration.nix --upgrade";
       ls = "eza --icons=always --git --color=always";
     };
     autocd = true;
