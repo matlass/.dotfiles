@@ -16,7 +16,7 @@
     shellAliases = {
       nrs = "sudo nixos-rebuild switch -I nixos-config=$HOME/.config/nixos/configuration.nix";
       nru = "sudo nixos-rebuild switch -I nixos-config=$HOME/.config/nixos/configuration.nix --upgrade";
-      ls = "eza";
+      ls = "eza --icons=always --git --color=always";
     };
     autocd = true;
     enableCompletion = true;
