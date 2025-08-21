@@ -16,7 +16,7 @@
     enable = true;
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ~/.config/nixos/";
-      nru = "sudo nixos-rebuild switch --flake ~/.config/nixos/configuration.nix --upgrade";
+      nru = "sudo nixos-rebuild switch --flake ~/.config/nixos/ --upgrade";
       ls = "eza --icons=always --git --color=always";
     };
     autocd = true;
