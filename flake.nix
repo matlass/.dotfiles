@@ -3,11 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     nvf.url = "github:NotAShelf/nvf";
   };
-  
-  outputs = { self, nixpkgs, ... } @ inputs: 
-  let 
+
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
   in
   {
@@ -16,8 +17,14 @@
         inherit inputs;
       };
       modules = [
-      ./configuration.nix
-      ./home.nix
+        ./configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useUserPackages = true;
+          home-manager.useGlobalPkgs = true;
+          home-manager.backupFileExtension = "backup";
+          home-manager.users.matthieu = import ./home.nix;
+        }
       ];
     };
   };

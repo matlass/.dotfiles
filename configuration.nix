@@ -6,15 +6,9 @@ in
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      (import "${home-manager}/nixos")
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
-  home-manager.backupFileExtension = "backup";
-  home-manager.users.matthieu = import ./home.nix;
 
   # Bootloader
   boot.loader.systemd-boot.enable = false;
