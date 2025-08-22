@@ -6,9 +6,10 @@
     home-manager.url = "github:nix-community/home-manager/release-25.05";
   };
 
-  outputs = { self, nixpkgs, home-manager,  ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
   let
-    pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
   in
   {
     nixosConfigurations.bok = nixpkgs.lib.nixosSystem {
