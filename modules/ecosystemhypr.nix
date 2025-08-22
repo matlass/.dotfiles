@@ -13,10 +13,10 @@ in
       splash = false;
       splash_offset = 2.0;
       preload = [
-        "/etc/nixos/modules/nix-dark.png"
+        "$HOME/.config/nixos/modules/images/nix-dark.png"
       ];
       wallpaper = [
-        ",/etc/nixos/modules/nix-dark.png"
+        ",$HOME/.config/nixos/modules/images/nix-dark.png"
       ];
     };
   };
@@ -297,7 +297,7 @@ in
 
     background {
         monitor =
-        path = ~/.config/nixos/modules/nixos_ascii_wallpapaer.jpg 
+        path = ~/.config/nixos/modules/images/nixos_ascii_wallpapaer.jpg 
 
         color = rgb(0,0,0) # color will be rendered initially until path is available
 

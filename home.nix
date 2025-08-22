@@ -5,7 +5,7 @@
     ./modules/hyprland.nix
     ./modules/waybar.nix
     ./modules/ecosystemhypr.nix
-#    ./modules/neovim.nix
+    ./modules/neovim.nix
   ];
   
   home.username = "matthieu";
@@ -48,17 +48,6 @@
     EDITOR = "nvim";
   };
 
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-    withNodeJs = true;
-    extraConfig = "
-    set relativenumber
-    ";
-  };
-
-
   home.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
@@ -75,6 +64,6 @@
     enable = true;
   };
   home.packages = with pkgs; [
-    eza 
+    eza
   ];
 }

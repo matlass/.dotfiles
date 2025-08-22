@@ -4,10 +4,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
-    nvf.url = "github:NotAShelf/nvf";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager,  ... } @ inputs:
   let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
   in
