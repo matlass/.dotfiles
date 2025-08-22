@@ -24,6 +24,8 @@
     vimAlias = true;
     vimdiffAlias = true;
     extraPackages = with pkgs; [
+      lua-language-server
+      rnix-lsp
       wl-clipboard
     ];
     plugins = with pkgs.vimPlugins; [
