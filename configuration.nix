@@ -26,7 +26,7 @@ in
     settings = {
       default_session = {
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland";
-        user = "greeter";
+        user = "matthieu";
       };
       initial_session = {
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland";
