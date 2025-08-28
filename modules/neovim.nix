@@ -14,10 +14,6 @@
   };
 */
   programs.neovim = 
-  let
-    toLua = str: "lua << EOF\n${str}\nEOF\n";
-    toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-  in
   {
     enable = true;
     viAlias = true;
@@ -28,55 +24,19 @@
       ni 
       wl-clipboard
     ];
-    plugins = with pkgs.vimPlugins; [
-#      {
-#        plugin = nvim-lspconfig;
-#        config = toLuaFile ./nvim/plugin/lsp.lua;
-#      }
-      {
-        plugin = comment-nvim;
-        config = toLua "require(\"Comment\").setup()";
-      }
-      {
-        plugin = gruvbox-nvim;
-        config = "colorscheme gruvbox";
-      }
-      neodev-nvim
-      nvim-cmp 
-      {
-        plugin = nvim-cmp;
-        config = toLuaFile ./nvim/plugin/cmp.lua;
-      }
-      {
-        plugin = telescope-nvim;
-        config = toLuaFile ./nvim/plugin/telescope.lua;
-      }
-      telescope-fzf-native-nvim
-      cmp_luasnip
-      cmp-nvim-lsp
-      luasnip
-      friendly-snippets
-      lualine-nvim
-      nvim-web-devicons
-      {
-        plugin = (nvim-treesitter.withPlugins (p: [
-          p.tree-sitter-nix
-	      p.tree-sitter-c
-          p.tree-sitter-vim
-          p.tree-sitter-bash
-          p.tree-sitter-lua
-          p.tree-sitter-python
-        ]));
-        config = toLuaFile ./nvim/plugin/treesitter.lua;
-      }
-      vim-nix
-      # {
-      #   plugin = vimPlugins.own-onedark-nvim;
-      #   config = "colorscheme onedark";
-      # }
-    ];
+    plugins = with pkgs.vimPlugins; [];
     extraLuaConfig = ''
-      ${builtins.readFile ./nvim/options.lua}
+      vim.g.mapleader = ' '
+      vim.g.maplocalleader = ' '
+      vim.o.clipboard = 'wl-clipboard'
+      vim.o.number = true
+      vim.o.relativenumber = true
+      vim.o.signcolumn = 'yes'
+      vim.o.tabstop = 4
+      vim.o.shiftwidth = 4
+      vim.o.updatetime = 300
+      vim.o.termguicolors = true
+      vim.o.mouse = 'a'
     '';
   };
 }
