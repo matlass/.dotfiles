@@ -27,7 +27,7 @@
     plugins = with pkgs.vimPlugins; [];
     extraLuaConfig = ''
       vim.g.mapleader = ' '
-      vim.g.maplocalleader = ' '
+      #vim.g.maplocalleader = ' '
       vim.o.clipboard = 'wl-clipboard'
       vim.o.number = true
       vim.o.relativenumber = true
