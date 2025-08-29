@@ -113,7 +113,6 @@ in
     playerctl
     pavucontrol
     brightnessctl
-    neovim
     libnotify
     hyprshot
     beeper

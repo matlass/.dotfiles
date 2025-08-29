@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+
+set -e
+
+FLAKE_PATH="$HOME/.config/nixos"
+HOST="bok"
+
+cd "$FLAKE_PATH"
+
+echo "Staging all changes for git..."
+git add .
+
+echo "Enter your commit message: "
+read COMMIT_MSG
+
+git commit -m "$COMMIT_MSG"
+
+echo "Upgrading NixOS system ($HOST)..."
+sudo nixos-rebuild switch --flake "$FLAKE_PATH#$HOST"
+
+echo "Upgrading Home Manager user config ($USER_OUT)..."
+home-manager --flake "$FLAKE_PATH#$USER_OUT" switch
+
