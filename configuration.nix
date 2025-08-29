@@ -107,7 +107,7 @@ in
     vim 
     kitty
     hyprlock
-    swaync
+    swaynotificationcenter
     brave
     htop
     btop
