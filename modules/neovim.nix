@@ -51,15 +51,14 @@
           "vimplugin-ts-comments.nvim" = {
             package = pkgs.vimUtils.buildVimPlugin { 
             name = "ts-comments.nvim";
-            src = pkgs.fetchFromGitHub {
-              owner = "folke";
-              repo = "ts-comments.nvim";
-              rev = "main"; # or a specific tag/commit
-              sha256 = "7uCJDt/w4q+Huoeh7wTjxicVp6+XWt8LHOXkgC5INDU="; 
+              src = pkgs.fetchFromGitHub {
+                owner = "folke";
+                repo = "ts-comments.nvim";
+                rev = "main"; # or a specific tag/commit
+                sha256 = "7uCJDt/w4q+Huoeh7wTjxicVp6+XWt8LHOXkgC5INDU="; 
+              };
             };
-            };
-            setupModule = "ts-comments";
-            setupOpts = {}; # Add any setup options here if needed
+            after = ''require("ts-comments")'';
             event = ["BufReadPost" "BufNewFile"];
           };
         };
