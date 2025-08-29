@@ -60,9 +60,6 @@
     categories = [ "Network" "WebBrowser" ];
   };
 
-  services.swaync = {
-    enable = true;
-  };
   home.packages = with pkgs; [
     eza
     home-manager

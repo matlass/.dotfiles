@@ -107,6 +107,7 @@ in
     vim 
     kitty
     hyprlock
+    swaync
     brave
     htop
     btop
