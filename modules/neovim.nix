@@ -25,7 +25,7 @@
       wl-clipboard
     ];
     withNodeJs = true;
-    withPhthon3 = true;
+    withPython3 = true;
     withRuby = true;
     plugins = with pkgs.vimPlugins; [];
     /*extraLuaConfig = ''

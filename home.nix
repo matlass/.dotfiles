@@ -14,8 +14,9 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/.config/nixos/";
-      nru = "sudo nixos-rebuild switch --flake ~/.config/nixos/ --upgrade";
+      nrs = "sudo nixos-rebuild switch --flake ~/.config/nixos#bok";
+      nru = "sudo nixos-rebuild switch --flake ~/.config/nixos#bok --upgrade";
+      hrs = "home-manager --flake ~/.config/nixos#matthieu switch";
       ls = "eza --icons=always --git --color=always";
     };
     autocd = true;
@@ -64,5 +65,6 @@
   };
   home.packages = with pkgs; [
     eza
+    home-manager
   ];
 }

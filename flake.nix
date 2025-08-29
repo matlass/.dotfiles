@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "My flakes :3";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
@@ -19,14 +19,13 @@
       };
       modules = [
         ./configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useUserPackages = true;
-          home-manager.useGlobalPkgs = true;
-          home-manager.backupFileExtension = "backup";
-          home-manager.users.matthieu = import ./home.nix;
-        }
       ];
+    };
+
+    homeConfigurations.matthieu = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [ ./home.nix ];
+      extraSpecialArgs = { inherit inputs; };
     };
   };
 }
