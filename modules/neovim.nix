@@ -46,6 +46,7 @@
           clang.enable = true;
           lua.enable = true;
         };
+        mini.pairs.enable = true;
       };
     };
   };
