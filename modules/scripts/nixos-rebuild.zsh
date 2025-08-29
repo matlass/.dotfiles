@@ -4,6 +4,7 @@ set -e
 
 FLAKE_PATH="$HOME/.config/nixos"
 HOST="bok"
+USER_OUT="matthieu"
 
 cd "$FLAKE_PATH"
 
