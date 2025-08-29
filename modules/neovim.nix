@@ -50,13 +50,12 @@
         lazy.plugins = {
           "ts-comments.nvim" = {
             package = pkgs.vimPlugins.ts-comments-nvim;
-              name = "ts-comments.nvim";
-              src = pkgs.fetchFromGitHub {
-                owner = "folke";
-                repo = "ts-comments.nvim";
-                rev = "main"; # or a specific tag/commit
-                sha256 = "0000000000000000000000000000000000000000000000000000"; # Replace after first build!
-              };
+            name = "ts-comments.nvim";
+            src = pkgs.fetchFromGitHub {
+              owner = "folke";
+              repo = "ts-comments.nvim";
+              rev = "main"; # or a specific tag/commit
+              sha256 = "0000000000000000000000000000000000000000000000000000"; 
             };
             setupModule = "ts-comments";
             setupOpts = {}; # Add any setup options here if needed
