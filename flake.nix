@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
+    nvf.url = "github:notashelf/nvf";
   };
 
   outputs = { self, nixpkgs, home-manager, unstable, ... } @ inputs:
@@ -24,7 +25,10 @@
 
     homeConfigurations.matthieu = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [ ./home.nix ];
+      modules = [ 
+        inputs.nvf.homeManagerModules.default
+        ./home.nix 
+      ];
       extraSpecialArgs = { inherit inputs; };
     };
   };
