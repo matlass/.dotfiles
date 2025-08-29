@@ -24,7 +24,7 @@
     };
 
     homeConfigurations.matthieu = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = pkgs; #nixpkgs.legacyPackages.x86_64-linux;
       modules = [ 
         inputs.nvf.homeManagerModules.default
         ./home.nix 
