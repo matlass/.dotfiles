@@ -48,7 +48,7 @@
         };
         mini.pairs.enable = true;
         lazy.plugins = {
-          "ts-comments.nvim" = {
+          "vimplugin-ts-comments.nvim" = {
             package = pkgs.vimUtils.buildVimPlugin { 
             name = "ts-comments.nvim";
             src = pkgs.fetchFromGitHub {
