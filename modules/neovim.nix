@@ -47,6 +47,23 @@
           lua.enable = true;
         };
         mini.pairs.enable = true;
+        lazy.plugins = {
+          "ts-comments.nvim" = {
+            package = pkgs.vimPlugins."ts-comments-nvim" or
+          pkgs.vimUtils.buildVimPlugin {
+              name = "ts-comments.nvim";
+              src = pkgs.fetchFromGitHub {
+                owner = "folke";
+                repo = "ts-comments.nvim";
+                rev = "main"; # or a specific tag/commit
+                sha256 = "0000000000000000000000000000000000000000000000000000"; # Replace after first build!
+              };
+            };
+            setupModule = "ts-comments";
+            setupOpts = {}; # Add any setup options here if needed
+            event = ["BufReadPost" "BufNewFile"];
+          };
+        };
       };
     };
   };
