@@ -21,6 +21,11 @@ in
   #Kernel parametre
   boot.kernelParams = [ "i915.enable_dpcd_backlight=3" ];
 
+  services.logind = {
+    handleLidSwitch = "lock";
+    lockCommand = "${pkgs.hyprlock}/bin/hyprlock";
+  };
+
   services.greetd = {
     enable = true;
     settings = {
