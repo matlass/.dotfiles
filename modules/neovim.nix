@@ -25,10 +25,10 @@
       wl-clipboard
     ];
     plugins = with pkgs.vimPlugins; [];
-    extraLuaConfig = ''
+    /*extraLuaConfig = ''
       vim.g.mapleader = ' '
-      #vim.g.maplocalleader = ' '
-      vim.o.clipboard = 'wl-clipboard'
+      vim.g.maplocalleader = ' '
+      -- vim.o.clipboard = 'wl-clipboard'
       vim.o.number = true
       vim.o.relativenumber = true
       vim.o.signcolumn = 'yes'
@@ -37,6 +37,6 @@
       vim.o.updatetime = 300
       vim.o.termguicolors = true
       vim.o.mouse = 'a'
-    '';
+    '';*/
   };
 }
