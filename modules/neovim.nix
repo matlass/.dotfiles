@@ -7,8 +7,8 @@
       vim = {
         theme = {
           enable = true;
-          name = "catppuccin";
-          style = "mocha";
+          name = "tokyonight"; #"catppuccin";
+          style = "moon"; #"mocha";
         };
         viAlias = true;
         vimAlias = true;
