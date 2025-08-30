@@ -120,6 +120,7 @@ in
     wofi
     yazi
     rapidraw
+    qemu
   ];
 
   fonts.packages = with pkgs; [
