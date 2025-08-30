@@ -61,6 +61,11 @@
             after = ''require("ts-comments")'';
             event = ["BufReadPost" "BufNewFile"];
           };
+          "grug-far.nvim"= {
+            package = pkgs.vimPlugins.grug-far-nvim;
+            setupModule = "grug-far";
+            cmd = [ "GrugFar" ];
+          };
         };
       };
     };
