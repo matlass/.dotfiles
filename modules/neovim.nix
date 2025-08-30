@@ -24,7 +24,11 @@
           tabstop = 2;
           shiftwidth = 2;
         };
+        binds.whichkey = {
+          enable = true;
+        };
 
+        mini.pairs.enable = true;
         statusline.lualine.enable = true;
         telescope = {
           enable = true;
@@ -36,20 +40,19 @@
             }
           ];
         };
+        
         autocomplete = {
           nvim-cmp.enable = true;
           blink-cmp.sourcePlugins.ripgrep.enable = true;
         };
         lsp.enable = true;
-
         languages = {
           enableTreesitter = true;
-          
           nix.enable = true;
           clang.enable = true;
           lua.enable = true;
         };
-        mini.pairs.enable = true;
+
         lazy.plugins = {
           "vimplugin-ts-comments.nvim" = {
             package = pkgs.vimUtils.buildVimPlugin { 
