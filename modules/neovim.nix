@@ -41,7 +41,9 @@
             }
           ];
         };
-        
+        tabline.nvimBufferline = {
+          enable = true;
+        }; 
         autocomplete = {
           nvim-cmp.enable = true;
           blink-cmp.sourcePlugins.ripgrep.enable = true;
