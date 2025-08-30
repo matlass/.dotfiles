@@ -27,11 +27,9 @@
         ui = {
           noice.enable = true;
         };
-
         git = {
           gitsigns.enable = true;
         };
-
         mini.pairs.enable = true;
         statusline.lualine.enable = true;
         telescope = {
@@ -63,7 +61,6 @@
           clang.enable = true;
           bash.enable = true;
         };
-
         diagnostics = {
           nvim-lint = {
             enable = true;
@@ -75,7 +72,6 @@
             };
           };
         };
-
         lazy.plugins = {
           "vimplugin-ts-comments.nvim" = {
             package = pkgs.vimUtils.buildVimPlugin { 
