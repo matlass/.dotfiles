@@ -1,14 +1,14 @@
 {
-  description = "My flakes :3";
+  description = "Mi flaque :3";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stable.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager/";
     nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { self, nixpkgs, home-manager, unstable, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, stable, ... } @ inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
