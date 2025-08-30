@@ -57,7 +57,6 @@
     extensions = [
       "nngceckbapebfimnlniiiahkmmgnoini" # Bitwarden
       "okadibdjfemhmcjkaemgkpjjdhfalhmm" # uBlock Origin Light
-      "lnbeleladnlfoedlgpnlfmekoejohicg"
     ];
   };
 
