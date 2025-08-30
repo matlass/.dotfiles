@@ -184,7 +184,16 @@ in
       #     background-color: @lavender!important;
       #   }
       # '';
-    settings = {};
+    settings = {
+      show = "drun";
+      location = "top";
+      width = 700;
+      lines = 8;
+      columns = 2;
+      dynamic_lines = false;
+      allow_images = true;
+      images_size = 36;
+    };
     style = ''
       * {
     font-family: "JetBrainsMono Nerd Font", monospace;
