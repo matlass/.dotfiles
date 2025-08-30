@@ -24,6 +24,9 @@
           tabstop = 2;
           shiftwidth = 2;
         };
+        ui = {
+          noice.enable = true;
+        };
 
         git = {
           gitsigns.enable = true;
