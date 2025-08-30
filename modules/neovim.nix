@@ -29,6 +29,7 @@
         };
         visuals = {
           rainbow-delimiters.enable = true;
+          indent-blankline.enable = true;
         };
         git = {
           gitsigns.enable = true;
