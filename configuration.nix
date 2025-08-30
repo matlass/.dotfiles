@@ -120,7 +120,7 @@ in
     jetbrains.rider 
     wofi
     yazi
-    #inputs.unstable.legacyPackages.x86_64-linux.rapidraw
+    rapidraw
   ];
 
   fonts.packages = with pkgs; [
