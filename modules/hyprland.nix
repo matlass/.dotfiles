@@ -19,7 +19,9 @@ in
 
       input = {
         kb_layout = "fr";
-	kb_options = "caps:escape";
+      	kb_options = "caps:escape";
+        repeat_rate = 35;
+        repeat_delay = 200;
         follow_mouse = 1;
         sensitivity = 0;
         touchpad = {
