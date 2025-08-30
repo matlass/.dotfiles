@@ -184,6 +184,7 @@ in
       #     background-color: @lavender!important;
       #   }
       # '';
+    settings = {};
     style = ''
       * {
     font-family: "JetBrainsMono Nerd Font", monospace;
