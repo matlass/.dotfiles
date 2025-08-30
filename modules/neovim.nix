@@ -46,7 +46,12 @@
           nvim-cmp.enable = true;
           blink-cmp.sourcePlugins.ripgrep.enable = true;
         };
-        lsp.enable = true;
+        lsp = {
+          enable = true;
+          trouble = {
+            enable = true;
+          };
+        };
         languages = {
           enableTreesitter = true;
           nix.enable = true;
@@ -87,5 +92,6 @@
   };
   home.packages = with pkgs; [
     fzf
+    fzf-lua
   ];
 }
