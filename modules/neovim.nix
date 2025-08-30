@@ -24,9 +24,6 @@
           tabstop = 2;
           shiftwidth = 2;
         };
-        binds.whichkey = {
-          enable = true;
-        };
 
         mini.pairs.enable = true;
         statusline.lualine.enable = true;
@@ -73,7 +70,7 @@
             cmd = [ "GrugFar" ];
             keys = [
               {
-                key = "<leader>fr";
+                key = "<leader>rr";
                 action = ":GrugFar<CR>";
                 mode = ["n"];
                 desc = "GrugFar search";
