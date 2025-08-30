@@ -21,6 +21,9 @@
             active = "";
             default = "";
           };
+          persistent-workspaces = {
+            "*" = 5;
+          };
         };
 
         bluetooth = {
