@@ -92,6 +92,5 @@
   };
   home.packages = with pkgs; [
     fzf
-    fzf-lua
   ];
 }
