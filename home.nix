@@ -58,10 +58,15 @@
   #   icon = "brave-browser";
   #   type = "Application";
   #   categories = [ "Network" "WebBrowser" ];
+  #  };
+  # programs.chromium = {
+  #   enable = true;
+  #   package = pkgs.brave;
+  #   extensions = 
   # };
-   programs.brave = {
+  programs.brave = {
     enable = true;
-    extentions = [
+    extensions = [
       "nngceckbapebfimnlniiiahkmmgnoini" # Bitwarden
       "okadibdjfemhmcjkaemgkpjjdhfalhmm" # uBlock Origin Light
     ];
