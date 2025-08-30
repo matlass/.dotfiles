@@ -223,7 +223,7 @@ in
       }
 
       #logout {
-         bckground-image: image(url("${iconsDir}/logout.png"), url("${iconsDir}/logout.png"));
+         background-image: image(url("${iconsDir}/logout.png"), url("${iconsDir}/logout.png"));
       }
 
       #suspend {
