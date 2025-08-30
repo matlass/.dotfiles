@@ -21,10 +21,10 @@
             active = "";
             default = "";
           };
-          persistent-workspaces = {
-            "*" = 5;
-          };
-        };
+        #   persistent-workspaces = {
+        #     "*" = 5;
+        #   };
+         };
 
         bluetooth = {
           format = "󰂲";
