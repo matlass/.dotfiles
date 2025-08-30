@@ -33,6 +33,31 @@ in
       };
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    vim 
+    kitty
+    hyprlock
+    swaynotificationcenter
+    htop
+    btop
+    nautilus
+    networkmanagerapplet
+    unzip
+    zip
+    blueman
+    playerctl
+    pavucontrol
+    brightnessctl
+    libnotify
+    hyprshot
+    beeper
+    discord
+    wofi
+    yazi
+    rapidraw
+  ];
+
   programs.kdeconnect.enable = true;
   security.polkit.enable = true;
 
@@ -94,33 +119,6 @@ in
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim 
-    kitty
-    hyprlock
-    swaynotificationcenter
-    htop
-    btop
-    nautilus
-    networkmanagerapplet
-    unzip
-    zip
-    blueman
-    playerctl
-    pavucontrol
-    brightnessctl
-    libnotify
-    hyprshot
-    beeper
-    discord
-    jetbrains.rider 
-    wofi
-    yazi
-    rapidraw
-  ];
 
   fonts.packages = with pkgs; [
     inter
