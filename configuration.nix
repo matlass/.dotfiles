@@ -102,7 +102,6 @@ in
     kitty
     hyprlock
     swaynotificationcenter
-    brave
     htop
     btop
     nautilus

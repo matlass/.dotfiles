@@ -52,12 +52,19 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  xdg.desktopEntries.brave = {
-    name = "Brave Browser";
-    exec = "brave --ozone-platform=wayland %U";
-    icon = "brave-browser";
-    type = "Application";
-    categories = [ "Network" "WebBrowser" ];
+  # xdg.desktopEntries.brave = {
+  #   name = "Brave Browser";
+  #   exec = "brave --ozone-platform=wayland %U";
+  #   icon = "brave-browser";
+  #   type = "Application";
+  #   categories = [ "Network" "WebBrowser" ];
+  # };
+   programs.brave = {
+    enable = true;
+    extentions = [
+      "nngceckbapebfimnlniiiahkmmgnoini" # Bitwarden
+      "okadibdjfemhmcjkaemgkpjjdhfalhmm" # uBlock Origin Light
+    ];
   };
 
   home.packages = with pkgs; [
