@@ -25,6 +25,10 @@
           shiftwidth = 2;
         };
 
+        git = {
+          gitsigns.enable = true;
+        };
+
         mini.pairs.enable = true;
         statusline.lualine.enable = true;
         telescope = {
