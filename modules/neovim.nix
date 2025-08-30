@@ -27,6 +27,9 @@
         ui = {
           noice.enable = true;
         };
+        visuals = {
+          rainbow-delimiters.enable = true;
+        };
         git = {
           gitsigns.enable = true;
         };
