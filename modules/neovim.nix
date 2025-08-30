@@ -36,7 +36,10 @@
             }
           ];
         };
-        autocomplete.nvim-cmp.enable = true;
+        autocomplete = {
+          nvim-cmp.enable = true;
+          blink-cmp.sourcePlugins.ripgrep.enable = true;
+        };
         lsp.enable = true;
 
         languages = {
@@ -65,6 +68,12 @@
             package = pkgs.vimPlugins.grug-far-nvim;
             setupModule = "grug-far";
             cmd = [ "GrugFar" ];
+            keys = [
+              {
+                key = "<leader>fr";
+                actions = ":GrugFar<CR>";
+              }
+            ];
           };
         };
       };
