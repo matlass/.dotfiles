@@ -71,7 +71,7 @@
             keys = [
               {
                 key = "<leader>fr";
-                actions = "GrugFar";
+                action = ":GrugFar<CR>";
                 mode = ["n"];
                 desc = "GrugFar search";
               }
