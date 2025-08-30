@@ -56,7 +56,7 @@
           enableTreesitter = true;
           nix.enable = true;
           clang.enable = true;
-          lua.enable = true;
+          bash.enable = true;
         };
 
         diagnostics = {
@@ -104,5 +104,8 @@
   };
   home.packages = with pkgs; [
     fzf
+    nixpkgs-fmt
+    statix
+    clang-tools
   ];
 }
