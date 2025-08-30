@@ -59,6 +59,18 @@
           lua.enable = true;
         };
 
+        diagnostics = {
+          nvim-lint = {
+            enable = true;
+            lint_after_save = true;
+            linters_by_ft = {
+              python = [ "flake8" ];
+              nix = [ "nixpkgs_fmt" "statix" ];
+              c = [ "clangtidy" ];
+            };
+          };
+        };
+
         lazy.plugins = {
           "vimplugin-ts-comments.nvim" = {
             package = pkgs.vimUtils.buildVimPlugin { 
