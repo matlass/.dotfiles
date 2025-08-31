@@ -10,7 +10,7 @@
           name =  "catppuccin";
           style = "mocha";
         };
-        # viAlias = true;
+        viAlias = true;
         vimAlias = true;
         withNodeJs = true;
         withPython3 = true;
@@ -71,7 +71,7 @@
             lint_after_save = true;
             linters_by_ft = {
               python = [ "flake8" ];
-              nix = [ "nixpkgs_fmt" "statix" ];
+              nix = [ "statix" ]; #"nixpkgs_fmt" 
               c = [ "clangtidy" ];
             };
           };
