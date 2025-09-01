@@ -109,6 +109,8 @@
   };
   home.packages = with pkgs; [
     fzf
+    flake8
+    clangtidy
     nixpkgs-fmt
     statix
     clang-tools
