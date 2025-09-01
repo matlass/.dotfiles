@@ -70,9 +70,9 @@
             enable = true;
             lint_after_save = true;
             linters_by_ft = {
-              python = [ "flake8" ];
-              nix = [ "statix" ]; #"nixpkgs_fmt" 
-              c = [ "clangtidy" ];
+              python = [ "ruff" ];
+              nix = [ "statix" "nixpkgs_fmt" ];  
+              c = [ "clang-tidy" ];
             };
           };
         };
@@ -109,8 +109,7 @@
   };
   home.packages = with pkgs; [
     fzf
-    flake8
-    clangtidy
+    ruff
     nixpkgs-fmt
     statix
     clang-tools
