@@ -45,7 +45,7 @@
   };
 
   home.sessionVariables = {
-     EDITOR = "nvim";
+    EDITOR = "nvim";
     NIXOS_OZONE_WL = "1";
   };
 
