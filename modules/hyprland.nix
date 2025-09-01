@@ -9,7 +9,7 @@ in
       monitor = [ ",preferred,auto,1" ];
 
       env = [
-        "HYPRCURSOE_THEME,BreezeX-Black-hyprcursor"
+        "HYPRCURSOE_THEME,pirate"
         "HYPRCURSOR_SIZE,24"
       ];
 
