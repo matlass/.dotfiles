@@ -57,6 +57,7 @@ in
     wofi
     yazi
     rapidraw
+    python3
   ];
 
   programs.kdeconnect.enable = true;
