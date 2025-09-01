@@ -71,7 +71,7 @@
             lint_after_save = true;
             linters_by_ft = {
               python = [ "ruff" ];
-              nix = [ "statix" "nixpkgs_fmt" ];  
+              nix = [ "statix"  ];  
               c = [ "clang-tidy" ];
             };
           };

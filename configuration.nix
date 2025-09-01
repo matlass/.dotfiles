@@ -3,11 +3,12 @@ let
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       ./hardware-configuration.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Bootloader
   boot.loader.systemd-boot.enable = false;
   boot.loader.grub.enable = true;
@@ -61,7 +62,8 @@ in
   programs.kdeconnect.enable = true;
   security.polkit.enable = true;
 
-  networking.hostName = "bok"; # Define your hostname.
+  networking.hostName = "bok"; 
+
   # Enable networking
   networking.networkmanager.enable = true;
   hardware.bluetooth = {
@@ -73,12 +75,12 @@ in
       };
     };
   };  
+
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "fr_FR.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.UTF-8";
     LC_IDENTIFICATION = "fr_FR.UTF-8";
@@ -97,18 +99,13 @@ in
     variant = "";
   };
   
-  # Enable upower
   services.upower.enable = true;
-  # Enable power-profiles-daemon
   services.power-profiles-daemon.enable = true; 
-  # Enable Zsh
   programs.zsh.enable = true;
   services.gvfs.enable = true;
 
-  # Configure console keymap
   console.keyMap = "fr";
 
- # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.matthieu = {
     isNormalUser = true;
     description = "matthieu";
@@ -117,7 +114,6 @@ in
     shell = pkgs.zsh;
   };
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [
@@ -138,7 +134,6 @@ in
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk ];
 
-  # Enable sound with pipewire.
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -147,6 +142,7 @@ in
     pulse.enable = true;
     jack.enable = true;
   };
+
   # Delete generation from more that 7 days
   nix.gc = {
     automatic = true;
@@ -164,6 +160,6 @@ in
     enable = true;
     enable32Bit = true;
   };
-  system.stateVersion = "25.05"; # Did you read the comment?
 
+  system.stateVersion = "25.05"; 
 }
