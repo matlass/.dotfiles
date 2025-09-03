@@ -1,7 +1,7 @@
 {config, pkgs, inpute, ...}:
 
 {
-  programs.kmonad = {
+  services.kmonad = {
     enable = true;
     config = ./home-row.kbd;
   };
