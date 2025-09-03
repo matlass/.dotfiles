@@ -14,13 +14,7 @@ git add .
 echo "Enter your commit message: "
 read COMMIT_MSG
 
+git commit -m "$COMMIT_MSG"
 
 echo "Upgrading NixOS system ($HOST)..."
 sudo nixos-rebuild switch --flake "$FLAKE_PATH#$HOST"
-
-git add .
-
-echo "Upgrading Home Manager user config ($USER_OUT)..."
-home-manager --flake "$FLAKE_PATH#$USER_OUT" switch
-
-git commit -m "$COMMIT_MSG"
