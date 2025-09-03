@@ -111,7 +111,7 @@ in
   users.users.matthieu = {
     isNormalUser = true;
     description = "matthieu";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
