@@ -18,6 +18,17 @@ in
   fallthrough true
 )
 
+(defalias
+  ah (tap-hold-next-release a lalt)
+  sh (tap-hold-next-release s lmeta)
+  dh (tap-hold-next-release d lctl)
+  fh (tap-hold-next-release f lshift)
+  jh (tap-hold-next-release j lalt)
+  kh (tap-hold-next-release k lmeta)
+  lh (tap-hold-next-release l lctl)
+  smh (tap-hold-next-release semicolon lshift)
+)
+
 (defsrc
   grave 1 2 3 4 5 6 7 8 9 0 minus equal
   tab q w e r t y u i o p leftbrace rightbrace
@@ -29,7 +40,7 @@ in
 (deflayer home-row
   grave 1 2 3 4 5 6 7 8 9 0 minus equal
   tab q w e r t y u i o p leftbrace rightbrace
-  (tap-hold-next-release a lalt) (tap-hold-next-release s lmeta) (tap-hold-next-release d lctl) (tap-hold-next-release f lshift) g h (tap-hold-next-release j lalt) (tap-hold-next-release k lmeta) (tap-hold-next-release l lctl) (tap-hold-next-release semicolon lshift) apostrophe backslash
+  ah sh dh fh g h jh kh lh smh apostrophe backslash
   leftshift 102nd z x c v b n m comma dot slash rightshift
   space
 )
