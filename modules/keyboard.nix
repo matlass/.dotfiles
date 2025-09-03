@@ -12,7 +12,7 @@ in
 
   # Write the kmonad config file to your home directory
   home.file."home-row-azerty.kbd".text = ''
-  (defcfg
+(defcfg
   input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
   output (uinput-sink "kmonad")
   fallthrough true
@@ -20,9 +20,9 @@ in
 
 (defsrc
   esc  1 2 3 4 5 6 7 8 9 0 minus equal
-  tab  q w e r t y u i o p leftbracket rightbracket
-  caps a s d f g h j k l semicolon apostrophe
-  lshift z x c v b n m comma period slash
+  tab  q w e r t y u i o p lbracket rbracket
+  caps a s d f g h j k l m
+  lshift z x c v b n comma period slash
   space
 )
 
@@ -32,7 +32,7 @@ in
        (tap-hold-next-release w lmeta)
        (tap-hold-next-release e lctl)
        (tap-hold-next-release r lshift)
-       t y u i o p leftbracket rightbracket
+       t y u i o p lbracket rbracket
   caps (tap-hold-next-release a lalt)
        (tap-hold-next-release s lmeta)
        (tap-hold-next-release d lctl)
@@ -41,9 +41,8 @@ in
        (tap-hold-next-release j lalt)
        (tap-hold-next-release k lmeta)
        (tap-hold-next-release l lctl)
-       (tap-hold-next-release semicolon lshift)
-       apostrophe
-  lshift z x c v b n m comma period slash
+       (tap-hold-next-release m lshift)
+  lshift z x c v b n comma period slash
   space
 )
   '';
