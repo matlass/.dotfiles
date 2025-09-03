@@ -20,20 +20,16 @@ in
 
 (defsrc
   esc  1 2 3 4 5 6 7 8 9 0 minus equal
-  tab  q w e r t y u i o p lbracket rbracket
-  caps a s d f g h j k l m
-  lshift z x c v b n comma period slash
+  tab  a z e r t y u i o p
+  caps q s d f g h j k l semicolon
+  lshift w x c v b n m comma period slash
   space
 )
 
 (deflayer home-row
   esc  1 2 3 4 5 6 7 8 9 0 minus equal
-  tab  (tap-hold-next-release q lalt)
-       (tap-hold-next-release w lmeta)
-       (tap-hold-next-release e lctl)
-       (tap-hold-next-release r lshift)
-       t y u i o p lbracket rbracket
-  caps (tap-hold-next-release a lalt)
+  tab  a z e r t y u i o p
+  caps (tap-hold-next-release q lalt)
        (tap-hold-next-release s lmeta)
        (tap-hold-next-release d lctl)
        (tap-hold-next-release f lshift)
@@ -41,8 +37,8 @@ in
        (tap-hold-next-release j lalt)
        (tap-hold-next-release k lmeta)
        (tap-hold-next-release l lctl)
-       (tap-hold-next-release m lshift)
-  lshift z x c v b n comma period slash
+       (tap-hold-next-release semicolon lshift)
+  lshift w x c v b n m comma period slash
   space
 )
   '';
