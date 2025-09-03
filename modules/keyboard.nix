@@ -12,38 +12,85 @@ in
 
   # Write the kmonad config file to your home directory
   home.file."home-row-azerty.kbd".text = ''
-(defcfg
-  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
-  output (uinput-sink "kmonad")
+  (defcfg
+  input  (iokit-name)
+  output (kext)
+
+  ;; Comment this if you want unhandled events not to be emitted
   fallthrough true
+
+  ;; Set this to false to disable any command-execution in KMonad
+  allow-cmd true
 )
 
+;; lmet -> cmd
+;; lalt -> option
+;; fn   -> fn
+
+
 (defalias
-  ah (tap-hold-next-release a lalt)
-  sh (tap-hold-next-release s lmeta)
-  dh (tap-hold-next-release d lctl)
-  fh (tap-hold-next-release f lshift)
-  jh (tap-hold-next-release j lalt)
-  kh (tap-hold-next-release k lmeta)
-  lh (tap-hold-next-release l lctl)
-  smh (tap-hold-next-release semicolon lshift)
+    sft_a (tap-hold-next-release 200 a lsft)
+    alt_s (tap-hold-next-release 200 s lalt)
+    ctl_d (tap-hold-next-release 200 d lctl)
+    met_f (tap-hold-next-release 200 f lmet)
+
+    met_j (tap-hold-next-release 200 j rmet)
+    ctl_k (tap-hold-next-release 200 k rctl)
+    alt_l (tap-hold-next-release 200 l lalt)
+    sft_; (tap-hold-next-release 200 ; rsft)
+
+    nav (layer-toggle nav)
+    m_q (around lmet q)
+    m_w (around lmet w)
+    m_e (around lmet e)
+    m_r (around lmet r)
+    m_t (around lmet t)
+    m_a (around lmet a)
+    m_s (around lmet s)
+    m_d (around lmet d)
+    m_f (around lmet f)
+    m_g (around lmet g)
+    m_z (around lmet z)
+    m_x (around lmet x)
+    m_c (around lmet c)
+    m_v (around lmet v)
+    m_sp (around lmet space)
+
+    sub (layer-toggle sublime)
+    sm_sp (around lmet P)
 )
 
 (defsrc
-  grave 1 2 3 4 5 6 7 8 9 0 minus equal
-  tab q w e r t y u i o p leftbrace rightbrace
-  a s d f g h j k l semicolon apostrophe backslash
-  leftshift 102nd z x c v b n m comma dot slash rightshift
-  space
+  f10  f11  f12
+  tab  q    w    e    r    t    u    i    o    p
+  caps a    s    d    f    g    h    j    k    l    ;
+  lsft z    x    c    v    b    n    m    ,    .    /
+  fn lctl lalt lmet space
 )
 
-(deflayer home-row
-  grave 1 2 3 4 5 6 7 8 9 0 minus equal
-  tab q w e r t y u i o p leftbrace rightbrace
-  ah sh dh fh g h jh kh lh smh apostrophe backslash
-  leftshift 102nd z x c v b n m comma dot slash rightshift
-  space
+(deflayer qwerty
+  mute vold volu
+  tab  q    w    e    r    t    u    i    o    p
+  lctrl @sft_a   @alt_s   @ctl_d   @met_f   g   h   @met_j   @ctl_k   @alt_l   @sft_;
+  lsft  z    x    c    v    b    n    m    ,    .    /
+  fn lctl lalt @nav space
 )
+
+(deflayer nav
+  _ _ _
+  tab   @m_q   @m_w   @m_e   @m_r    @m_t    {      }    \(    \)
+  lctrl @m_a   @m_s   @m_d   @m_f    @m_g   left  down   up   right  ;
+  @sub  @m_z   @m_x   @m_c   @m_v      b     n      [     ]     <    >
+  fn lctl lalt @nav @m_sp
+)
+
+;; cmd-shift-p
+(deflayer sublime
+  _ _ _
+  _     _      _      _      _       _      _     _      _    @sm_sp
+  _     _      _      _      _       _      _     _      _       _       _
+  _     _      _      _      _       _      _     _      _       _       _
+  _     _      _      _      _
   '';
 
   # Systemd user service to run kmonad
