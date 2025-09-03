@@ -19,14 +19,16 @@ in
     )
 
     (defsrc
-      esc  & é " ' ( - è _ ç à ) =
-      q s d f g h j k l m ù 
-      w x c v b n , ; : !
+      esc  1 2 3 4 5 6 7 8 9 0 minus equal
+      a z e r t y u i o p leftbracket rightbracket
+      q s d f g h j k l m
+      w x c v b n comma semicolon colon exclam
       space
     )
 
     (deflayer home-row
-      esc  & é " ' ( - è _ ç à ) =
+      esc  1 2 3 4 5 6 7 8 9 0 minus equal
+      a z e r t y u i o p leftbracket rightbracket
       (tap-hold-next-release q lalt)
       (tap-hold-next-release s lmeta)
       (tap-hold-next-release d lctl)
@@ -36,8 +38,7 @@ in
       (tap-hold-next-release k lmeta)
       (tap-hold-next-release l lctl)
       (tap-hold-next-release m lshift)
-      ù
-      w x c v b n , ; : !
+      w x c v b n comma semicolon colon exclam
       space
     )
   '';
