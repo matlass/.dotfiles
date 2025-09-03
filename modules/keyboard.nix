@@ -19,26 +19,27 @@ in
 )
 
 (defsrc
-  esc  1 2 3 4 5 6 7 8 9 0 minus equal
-  tab  a z e r t y u i o p
-  caps q s d f g h j k l semicolon
-  lshift w x c v b n m comma period slash
+  grave 1 2 3 4 5 6 7 8 9 0 minus equal
+  tab q w e r t y u i o p leftbrace rightbrace
+  capslock a s d f g h j k l semicolon apostrophe backslash
+  leftshift 102nd z x c v b n m comma dot slash rightshift
   space
 )
 
 (deflayer home-row
-  esc  1 2 3 4 5 6 7 8 9 0 minus equal
-  tab  a z e r t y u i o p
-  caps (tap-hold-next-release q lalt)
-       (tap-hold-next-release s lmeta)
-       (tap-hold-next-release d lctl)
-       (tap-hold-next-release f lshift)
-       g h
-       (tap-hold-next-release j lalt)
-       (tap-hold-next-release k lmeta)
-       (tap-hold-next-release l lctl)
-       (tap-hold-next-release semicolon lshift)
-  lshift w x c v b n m comma period slash
+  grave 1 2 3 4 5 6 7 8 9 0 minus equal
+  tab q w e r t y u i o p leftbrace rightbrace
+  capslock (tap-hold-next-release a lalt)
+           (tap-hold-next-release s lmeta)
+           (tap-hold-next-release d lctl)
+           (tap-hold-next-release f lshift)
+           g h
+           (tap-hold-next-release j lalt)
+           (tap-hold-next-release k lmeta)
+           (tap-hold-next-release l lctl)
+           (tap-hold-next-release semicolon lshift)
+           apostrophe backslash
+  leftshift 102nd z x c v b n m comma dot slash rightshift
   space
 )
   '';
