@@ -36,7 +36,6 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    kmonad
     vim 
     kitty
     hyprlock
