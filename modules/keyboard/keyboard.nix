@@ -1,4 +1,4 @@
-{config, pkgs, inpute, ...}
+{config, pkgs, inpute, ...}:
 
 {
   programs.kmonad = {
