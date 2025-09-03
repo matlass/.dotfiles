@@ -6,7 +6,6 @@
     ./modules/waybar.nix
     ./modules/ecosystemhypr.nix
     ./modules/neovim.nix
-    ./modules/keyboard.nix
   ];
   
   home.username = "matthieu";
