@@ -12,35 +12,40 @@ in
 
   # Write the kmonad config file to your home directory
   home.file."home-row-azerty.kbd".text = ''
-    (defcfg
-      input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
-      output (uinput-sink "kmonad")
-      fallthrough true
-    )
+  (defcfg
+  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  output (uinput-sink "kmonad")
+  fallthrough true
+)
 
-    (defsrc
-      esc  1 2 3 4 5 6 7 8 9 0 minus equal
-      a z e r t y u i o p leftbracket rightbracket
-      q s d f g h j k l m
-      w x c v b n comma semicolon colon exclam
-      space
-    )
+(defsrc
+  esc  1 2 3 4 5 6 7 8 9 0 minus equal
+  tab  q w e r t y u i o p leftbracket rightbracket
+  caps a s d f g h j k l semicolon apostrophe
+  lshift z x c v b n m comma period slash
+  space
+)
 
-    (deflayer home-row
-      esc  1 2 3 4 5 6 7 8 9 0 minus equal
-      a z e r t y u i o p leftbracket rightbracket
-      (tap-hold-next-release q lalt)
-      (tap-hold-next-release s lmeta)
-      (tap-hold-next-release d lctl)
-      (tap-hold-next-release f lshift)
-      g h
-      (tap-hold-next-release j lalt)
-      (tap-hold-next-release k lmeta)
-      (tap-hold-next-release l lctl)
-      (tap-hold-next-release m lshift)
-      w x c v b n comma semicolon colon exclam
-      space
-    )
+(deflayer home-row
+  esc  1 2 3 4 5 6 7 8 9 0 minus equal
+  tab  (tap-hold-next-release q lalt)
+       (tap-hold-next-release w lmeta)
+       (tap-hold-next-release e lctl)
+       (tap-hold-next-release r lshift)
+       t y u i o p leftbracket rightbracket
+  caps (tap-hold-next-release a lalt)
+       (tap-hold-next-release s lmeta)
+       (tap-hold-next-release d lctl)
+       (tap-hold-next-release f lshift)
+       g h
+       (tap-hold-next-release j lalt)
+       (tap-hold-next-release k lmeta)
+       (tap-hold-next-release l lctl)
+       (tap-hold-next-release semicolon lshift)
+       apostrophe
+  lshift z x c v b n m comma period slash
+  space
+)
   '';
 
   # Systemd user service to run kmonad
