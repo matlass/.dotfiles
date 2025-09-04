@@ -123,7 +123,7 @@ in
         "$mainMod, A, exec, $menu"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
-        "$mainMod, B, exec, brave --ozone-platform=wayland %U"
+        "$mainMod, B, exec, brave"
         "$mainMod, Backspace, exec, wlogout"
         "$mainMod, h, movefocus, l"
         "$mainMod, l, movefocus, r"
