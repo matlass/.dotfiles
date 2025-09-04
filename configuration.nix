@@ -161,7 +161,8 @@ in
     enable = true;
     enable32Bit = true;
   };
-  virtualisation.waydroid.enable = true;
-
+  programs.steam = {
+    enable = true;
+  };
   system.stateVersion = "25.05"; 
 }
