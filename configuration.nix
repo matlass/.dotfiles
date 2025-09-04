@@ -161,6 +161,7 @@ in
     enable = true;
     enable32Bit = true;
   };
+  virtualisation.waydroid.enable = true;
 
   system.stateVersion = "25.05"; 
 }
