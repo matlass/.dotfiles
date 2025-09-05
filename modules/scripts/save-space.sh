@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 set -e
 echo "starting to save space"
 sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system

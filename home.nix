@@ -14,9 +14,9 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      nrs = "~/.config/nixos/modules/scripts/nixos-rebuild.zsh";
-      nru = "~/.config/nixos/modules/scripts/update.zsh";
-      hrs = "~/.config/nixos/modules/scripts/home-manager-rebuild.zsh";
+      nrs = "~/.config/nixos/modules/scripts/nixos-rebuild.sh";
+      nru = "~/.config/nixos/modules/scripts/update.sh";
+      hrs = "~/.config/nixos/modules/scripts/home-manager-rebuild.sh";
       ls = "eza --icons=always --git --color=always";
     };
     autocd = true;
