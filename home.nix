@@ -6,7 +6,6 @@
     ./modules/waybar.nix
     ./modules/ecosystemhypr.nix
     ./modules/neovim.nix
-    ./modules/git.nix
   ];
   
   home.username = "matthieu";
@@ -37,11 +36,10 @@
 
   programs.git = {
     enable = true;
-    # userName = "your username;
-    # userEmail = "your email"";
     extraConfig = {
       pull.rebase = false;
       init.defaultBranch = "main";
+      include.path ="~/.config/.gitconfig-private";
     };
   };
 
