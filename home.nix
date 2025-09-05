@@ -6,6 +6,7 @@
     ./modules/waybar.nix
     ./modules/ecosystemhypr.nix
     ./modules/neovim.nix
+    ./modules/git.nix
   ];
   
   home.username = "matthieu";
@@ -36,8 +37,8 @@
 
   programs.git = {
     enable = true;
-    userName = "matlass_";
-    userEmail = "matthieu@thefau.com";
+    # userName = "your username;
+    # userEmail = "your email"";
     extraConfig = {
       pull.rebase = false;
       init.defaultBranch = "main";
