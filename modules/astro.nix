@@ -4,5 +4,6 @@
     rapidraw
     siril
     gimp3
+    stellarium
   ];
 }
