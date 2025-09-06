@@ -41,7 +41,6 @@ in
     kitty
     hyprlock
     swaynotificationcenter
-    htop
     btop
     nautilus
     networkmanagerapplet
