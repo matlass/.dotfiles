@@ -111,6 +111,9 @@
     fzf
     ruff
     nixpkgs-fmt
+    nil
+    nodejs
+    gcc
     statix
     clang-tools
   ];
