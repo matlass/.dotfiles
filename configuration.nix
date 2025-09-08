@@ -5,7 +5,7 @@ in
   imports =
     [ 
       ./hardware-configuration.nix
-      # ./modules/astro.nix
+      ./modules/astro.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
