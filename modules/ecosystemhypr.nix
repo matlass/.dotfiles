@@ -37,11 +37,11 @@ in
 	on-resume = "brightnessctl -r";
       }
       {
-        timout = 300;
+        timeout = 300;
         on-timeout = "loginctl lock-session";
       }
       {
-        timout = 600;
+        timeout = 600;
 	on-timeout = "systemctl suspend";
       }
       ];

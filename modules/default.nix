@@ -1,15 +1,17 @@
-{ ... }:
+{ lib, ... }:
 
 {
-  imports = [
-    ./hyprland.nix
-    ./git.nix
-    ./waybar.nix
-    ./ecosystemhypr.nix
-    ./neovim.nix
-    ./kitty.nix
-    ./btop.nix
-    ./notification.nix
-  ];
+  imports = builtins.attrValues (
+    lib.filterAttrs 
+      (name: type: 
+        type == "regular" && 
+        lib.hasSuffix ".nix" name && 
+        name != "default.nix"
+      )
+      (builtins.mapAttrs 
+        (name: type: ./. + "/${name}")
+        (builtins.readDir ./.)
+      )
+  );
 }
 
