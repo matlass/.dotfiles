@@ -4,7 +4,7 @@
     enable = true;
     font = {
       name = "monospace";
-      size = 12;
+      size = 10;
     };
     settings = {
       cursor_trail = "1";
