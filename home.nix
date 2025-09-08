@@ -1,14 +1,7 @@
 { config, pkgs, inputs, paths, ...}:
-
 {
   imports = [
-    ./modules/hyprland.nix
-    ./modules/waybar.nix
-    ./modules/ecosystemhypr.nix
-    ./modules/neovim.nix
-    ./modules/kitty.nix
-    ./modules/btop.nix
-    ./modules/notification.nix
+    ./modules
   ];
 
   programs.home-manager = {
