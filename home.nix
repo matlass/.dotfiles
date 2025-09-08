@@ -11,7 +11,6 @@
 
   programs.home-manager = {
     enable = true;
-    backupFileExtension = "backup";
   };
 
   home.username = "matthieu";
