@@ -57,6 +57,7 @@ in
     yazi
     rapidraw
     python3
+    bat-notify
   ];
 
   programs.kdeconnect.enable = true;
@@ -99,6 +100,12 @@ in
     variant = "";
   };
   
+  systemd.user.services.bat-notify = {
+    Unit.Description = "Battery notification daemon";
+    Service.ExecStart = "${pkgs.bat-notify}/bin/bat-notify";
+    Install.WantedBy = [ "default.target" ];
+  };
+
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true; 
   programs.zsh.enable = true;
