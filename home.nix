@@ -8,7 +8,12 @@
     ./modules/neovim.nix
     ./modules/kitty.nix
   ];
-  
+
+  programs.home-manager = {
+    enable = true;
+    backupFileExtension = "backup";
+  };
+
   home.username = "matthieu";
   home.homeDirectory = "/home/matthieu";
   home.stateVersion = "25.05";
@@ -60,6 +65,5 @@
 
   home.packages = with pkgs; [
     eza
-    home-manager
   ];
 }

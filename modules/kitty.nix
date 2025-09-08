@@ -2,11 +2,11 @@
 {
   programs.kitty = {
     enable = true;
+    themeFile = "${pkgs.kitty}/share/kitty/themes/Catppuccin-Mocha.conf";
     font = {
       name = "monospace";
       size = 12;
     };
-    theme = "Catppuccin-Mocha";
     settings = {
       cursor_trail = "1";
       cursor_trail_decay = "0.2 0.8";
