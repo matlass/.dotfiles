@@ -16,5 +16,5 @@ read COMMIT_MSG
 git commit -m "$COMMIT_MSG"
 
 echo "Upgrading Home Manager user config ($USER_OUT)..."
-home-manager --flake "$FLAKE_PATH#$USER_OUT" switch
+home-manager --flake "$FLAKE_PATH#$USER_OUT" switch -b backup
 
