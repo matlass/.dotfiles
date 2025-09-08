@@ -7,6 +7,7 @@
     ./modules/ecosystemhypr.nix
     ./modules/neovim.nix
     ./modules/kitty.nix
+    ./modules/btop.nix
   ];
 
   programs.home-manager = {
