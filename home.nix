@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ...}:
+{ config, pkgs, inputs, paths, ...}:
 
 {
   imports = [
@@ -21,9 +21,9 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      nrs = "~/.config/nixos/modules/scripts/nixos-rebuild.sh";
-      nru = "~/.config/nixos/modules/scripts/update.sh";
-      hrs = "~/.config/nixos/modules/scripts/home-manager-rebuild.sh";
+      nrs = "${paths.nixosRebuildScript}";
+      nru = "${paths.updateScript}";
+      hrs = "${paths.homeManagerRebuildScript}";
       ls = "eza --icons=always --git --color=always";
     };
     autocd = true;
