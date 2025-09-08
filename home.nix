@@ -6,6 +6,7 @@
     ./modules/waybar.nix
     ./modules/ecosystemhypr.nix
     ./modules/neovim.nix
+    ./modules/kitty.nix
   ];
   
   home.username = "matthieu";
@@ -53,6 +54,7 @@
     extensions = [
       "nngceckbapebfimnlniiiahkmmgnoini" # Bitwarden
       "okadibdjfemhmcjkaemgkpjjdhfalhmm" # uBlock Origin Light
+      "clngdbkpkpeebahjckkjfobafhncgmne" # Stylus
     ];
   };
 

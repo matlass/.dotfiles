@@ -38,7 +38,6 @@ in
 
   environment.systemPackages = with pkgs; [
     vim 
-    kitty
     hyprlock
     swaynotificationcenter
     btop
