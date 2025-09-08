@@ -57,7 +57,6 @@ in
     yazi
     rapidraw
     python3
-    bat-notify
   ];
 
   programs.kdeconnect.enable = true;
