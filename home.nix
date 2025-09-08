@@ -8,6 +8,7 @@
     ./modules/neovim.nix
     ./modules/kitty.nix
     ./modules/btop.nix
+    ./modules/notification.nix
   ];
 
   programs.home-manager = {

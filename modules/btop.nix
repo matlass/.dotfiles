@@ -3,7 +3,7 @@
   programs.btop = {
     enable = true;
     themes = {
-      my-theme = ''
+      catppuccin-moka = ''
     # Main background, empty for terminal default, need to be empty if you want transparent background
 theme[main_bg]="#1e1e2e"
 
