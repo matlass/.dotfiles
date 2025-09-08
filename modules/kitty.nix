@@ -2,7 +2,7 @@
 {
   programs.kitty = {
     enable = true;
-    themeFile = "${pkgs.kitty}/share/kitty/themes/Catppuccin-Mocha.conf";
+    themeFile = "~/.config/nixos/modules/themes/mocha_kitty.conf";
     font = {
       name = "monospace";
       size = 12;
