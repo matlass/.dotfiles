@@ -1,6 +1,6 @@
 {config, pkgs, paths, ...}:
 let
-  iconsDir = "${paths.iconsPath}";
+  iconsDir = "/etc/nixos/modules/icons"; #"${paths.iconsPath}";
 in
 {
   #Wlogout config
