@@ -2,7 +2,6 @@
 {
   programs.kitty = {
     enable = true;
-    themeFile = "~/.config/nixos/modules/themes/mocha_kitty.conf";
     font = {
       name = "monospace";
       size = 12;
