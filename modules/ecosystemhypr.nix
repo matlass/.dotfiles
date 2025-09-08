@@ -1,6 +1,6 @@
-{config,pkgs, ...}:
+{config,pkgs, paths, ...}:
 let
-  iconsDir = "/etc/nixos/modules/icons";
+  iconsDir = "${paths.iconsPath}";
 in
 {
 
@@ -13,10 +13,10 @@ in
       splash = false;
       splash_offset = 2.0;
       preload = [
-        "$HOME/.config/nixos/modules/images/nix-dark.png"
+        "${paths.nixDarkImage}"
       ];
       wallpaper = [
-        ",$HOME/.config/nixos/modules/images/nix-dark.png"
+        ",${paths.nixDarkImage}"
       ];
     };
   };
@@ -308,7 +308,7 @@ in
 
     background {
         monitor =
-        path = ~/.config/nixos/modules/images/nixos_ascii_wallpapaer.jpg 
+        path = ${paths.nixosAsciiWallpaper} 
 
         color = rgb(0,0,0) # color will be rendered initially until path is available
 

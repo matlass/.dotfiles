@@ -12,11 +12,14 @@
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    
+    # Import centralized paths
+    paths = import ./lib/paths.nix { inherit inputs; };
   in
   {
     nixosConfigurations.bok = nixpkgs.lib.nixosSystem {
       specialArgs = {
-        inherit inputs;
+        inherit inputs paths;
       };
       modules = [
         ./configuration.nix
@@ -29,7 +32,7 @@
         inputs.nvf.homeManagerModules.default
         ./home.nix 
       ];
-      extraSpecialArgs = { inherit inputs; };
+      extraSpecialArgs = { inherit inputs paths; };
     };
   };
 }

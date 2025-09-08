@@ -2,7 +2,7 @@
 
 set -e
 
-FLAKE_PATH="$HOME/.config/nixos"
+FLAKE_PATH="$HOME/.dotfiles"
 USER_OUT="matthieu"
 
 cd "$FLAKE_PATH"
