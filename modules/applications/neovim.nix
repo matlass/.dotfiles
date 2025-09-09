@@ -114,7 +114,7 @@
     nil
     nodejs
     gcc
-    make
+    makedepend
     statix
     clang-tools
   ];
