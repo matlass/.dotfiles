@@ -117,5 +117,6 @@
     makedepend
     statix
     clang-tools
+    libclang
   ];
 }
