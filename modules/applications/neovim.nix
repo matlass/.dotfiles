@@ -116,7 +116,7 @@
     gcc
     makedepend
     statix
-    clang-tools
+    # clang-tools
     libclang
   ];
 }
