@@ -114,6 +114,7 @@
     nil
     nodejs
     gcc
+    make
     statix
     clang-tools
   ];
