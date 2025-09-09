@@ -25,7 +25,7 @@
         inherit inputs paths;
       };
       modules = [
-        ./configuration.nix
+        ./hosts/bok/configuration.nix
       ];
     };
 
