@@ -11,7 +11,7 @@
           style = "mocha";
         };
         viAlias = true;
-        vimAlias = true;
+        # vimAlias = true;
         withNodeJs = true;
         withPython3 = true;
         withRuby = true;
