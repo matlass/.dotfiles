@@ -6,10 +6,10 @@
       nvim-cmp = {
         enable = true;
         sources = {
-          "nvim_lsp" = "[LSP]";
-          "path" = "[Path]";
-          "buffer" = "[Buffer]";
-          "luasnip" = "[Snippet]";
+          nvim_lsp = "[LSP]";
+          path = "[Path]";
+          buffer = "[Buffer]";
+          luasnip = "[Snippet]";
         };
         mappings = {
           complete = "<C-Space>";
