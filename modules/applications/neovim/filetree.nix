@@ -4,9 +4,9 @@
       nvimTree = {
         enable = true;
         openOnSetup = false;
-        hijack_cursor = true;
-        hijack_unnamed_buffer_when_opening = false;
         setupOpts = {
+          hijack_cursor = true;
+          hijack_unnamed_buffer_when_opening = false;
           update_focused_file = {
             enable = true;
             update_root = true;
