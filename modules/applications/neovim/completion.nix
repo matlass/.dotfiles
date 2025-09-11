@@ -13,13 +13,13 @@
         };
         mappings = {
           complete = "<C-Space>";
-          confirm = ["<CR>" "<Tab>"];
-          next = ["<Tab>" "<C-n>"];
-          previous = ["<S-Tab>" "<C-p>"];
-          close = "<C-e>";
-          scrollDocsUp = "<C-d>";
+          confirm = "<CR>";      
+          next = "<Tab>";         
+          previous = "<S-Tab>";    
+          close = "<C-e>";          
+          scrollDocsUp = "<C-d>";    
           scrollDocsDown = "<C-f>";
-        };
+       };
       };
     };
     
