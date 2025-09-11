@@ -31,7 +31,7 @@
               show = {
                 file = true;
                 folder = true;
-                folderArrow = true;
+                folder_arrow = true;
                 git = true;
               };
             };
