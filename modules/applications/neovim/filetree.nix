@@ -13,32 +13,32 @@
             enable = true;
             update_root = true;
           };
-        };
-        view = {
-          width = 30;
-          side = "left";
-        };
-        renderer = {
-          addTrailing = false;
-          groupEmpty = false;
-          highlightGit = true;
-          rootFolderLabel = ":~:s?$?/..?";
-          indentWidth = 2;
-          indentMarkers = {
-            enable = false;
-            inlineArrows = true;
-          };
-          icons = {
-            webdevColors = true;
-            gitPlacement = "before";
-            padding = " ";
-            symlinkArrow = " ➛ ";
-            show = {
-              file = true;
-              folder = true;
-              folderArrow = true;
-              git = true;
+          renderer = {
+            addTrailing = false;
+            groupEmpty = false;
+            highlightGit = true;
+            rootFolderLabel = ":~:s?$?/..?";
+            indentWidth = 2;
+            indentMarkers = {
+              enable = false;
+              inlineArrows = true;
             };
+            icons = {
+              webdevColors = true;
+              git_Placement = "before";
+              padding = " ";
+              symlinkArrow = " ➛ ";
+              show = {
+                file = true;
+                folder = true;
+                folderArrow = true;
+                git = true;
+              };
+            };
+          };
+          view = {
+            width = 30;
+            side = "left";
           };
         };
       };
