@@ -8,9 +8,11 @@
         openOnSetup = false;
         hijackCursor = true;
         hijackUnnamedBufferWhenOpening = false;
-        update_focused_file = {
-          enable = true;
-          update_root = true;
+        setupOpts = {
+          update_focused_file = {
+            enable = true;
+            update_root = true;
+          };
         };
         view = {
           width = 30;
