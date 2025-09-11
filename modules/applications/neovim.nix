@@ -10,8 +10,8 @@
           name =  "catppuccin";
           style = "mocha";
         };
-        # viAlias = true;
-        # vimAlias = true;
+        viAlias = true;
+        vimAlias = true;
         withNodeJs = true;
         withPython3 = true;
         withRuby = true;
