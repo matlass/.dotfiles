@@ -24,9 +24,9 @@
     };
     
     # Add path completion via lazy plugins
-    lazy.plugins."cmp-path" = {
-      package = pkgs.vimPlugins.cmp-path;
-      event = "InsertEnter";
-    };
+    # lazy.plugins."cmp-path" = {
+    #   package = pkgs.vimPlugins.cmp-path;
+    #   event = "InsertEnter";
+    # };
   };
 }
