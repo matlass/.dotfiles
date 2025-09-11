@@ -7,6 +7,7 @@
       nru = "${paths.updateScript}";
       hrs = "${paths.homeManagerRebuildScript}";
       ls = "eza --icons=always --git --color=always";
+      vim = "${pkgs.vim}/bin/vim";
     };
     autocd = true;
     enableCompletion = true;
