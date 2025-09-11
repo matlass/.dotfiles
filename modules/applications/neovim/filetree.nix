@@ -8,9 +8,9 @@
         openOnSetup = false;
         hijackCursor = true;
         hijackUnnamedBufferWhenOpening = false;
-        updateFocusedFile = {
+        update_focused_file = {
           enable = true;
-          updateRoot = true;
+          update_root = true;
         };
         view = {
           width = 30;
