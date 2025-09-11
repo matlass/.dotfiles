@@ -73,7 +73,7 @@
         };
         
         # Buffer navigation
-        "<leader>bn" = {
+        "<leader>gn" = {
           action = ":bnext<CR>";
           desc = "Next buffer";
         };
