@@ -20,11 +20,8 @@
       # Web development
       html.enable = true;
       css.enable = true;
-      javascript.enable = true;
-      typescript.enable = true;
       
       # Data formats
-      json.enable = true;
       yaml.enable = true;
       markdown.enable = true;
       
