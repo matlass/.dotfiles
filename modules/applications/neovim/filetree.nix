@@ -21,7 +21,7 @@
             indent_width = 2;
             indent_markers = {
               enable = false;
-              inlineArrows = true;
+              inline_arrows = true;
             };
             icons = {
               webdev_colors = true;
