@@ -56,6 +56,10 @@ in
     yazi
     rapidraw
     python3
+    (neovim.override {
+    viAlias = false;
+    vimAlias = false;
+  })
   ];
 
   programs.kdeconnect.enable = true;
