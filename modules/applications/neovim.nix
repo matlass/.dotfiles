@@ -1,7 +1,10 @@
 { config, pkgs, inputs, ... }:
 
 {
-  programs.nvf = {
+  imports = [
+    ./neovim
+  ];
+/*  programs.nvf = {
     enable = true;
     settings = {
       vim = {
@@ -119,4 +122,5 @@
     # clang-tools
     libclang
   ];
+  */
 }
