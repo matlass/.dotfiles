@@ -25,7 +25,7 @@
             };
             icons = {
               webdevColors = true;
-              git_Placement = "before";
+              git_placement = "before";
               padding = " ";
               symlinkArrow = " ➛ ";
               show = {
