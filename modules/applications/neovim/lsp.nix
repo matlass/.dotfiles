@@ -11,9 +11,8 @@
       };
       lightbulb.enable = true;
       lspsaga.enable = false;
-      nvimCodeActionMenu.enable = true;
     };
-    
+    ui.fastaction.enable = true;
     diagnostics = {
       nvim-lint = {
         enable = true;
