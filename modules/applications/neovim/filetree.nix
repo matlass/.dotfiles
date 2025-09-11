@@ -14,20 +14,20 @@
             update_root = true;
           };
           renderer = {
-            addTrailing = false;
-            groupEmpty = false;
-            highlightGit = true;
-            rootFolderLabel = ":~:s?$?/..?";
-            indentWidth = 2;
-            indentMarkers = {
+            add_trailing = false;
+            group_empty = false;
+            highlight_git = true;
+            root_folder_label = ":~:s?$?/..?";
+            indent_width = 2;
+            indent_markers = {
               enable = false;
               inlineArrows = true;
             };
             icons = {
-              webdevColors = true;
+              webdev_colors = true;
               git_placement = "before";
               padding = " ";
-              symlinkArrow = " ➛ ";
+              symlink_arrow = " ➛ ";
               show = {
                 file = true;
                 folder = true;
