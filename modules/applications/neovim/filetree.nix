@@ -1,13 +1,11 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.nvf.settings.vim = {
     filetree = {
       nvimTree = {
         enable = true;
         openOnSetup = false;
-        hijackCursor = true;
-        hijackUnnamedBufferWhenOpening = false;
+        hijack_cursor = true;
+        hijack_unnamed_buffer_when_opening = false;
         setupOpts = {
           update_focused_file = {
             enable = true;
@@ -43,7 +41,7 @@
         };
       };
     };
-    
+
     # Add Oil.nvim for directory editing
     lazy.plugins."oil.nvim" = {
       package = pkgs.vimPlugins.oil-nvim;
