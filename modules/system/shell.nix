@@ -30,5 +30,6 @@
   home.packages = with pkgs; [
     eza
     tree
+    makedepend
   ];
 }
