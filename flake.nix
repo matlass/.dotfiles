@@ -11,15 +11,19 @@
     nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { self, nixpkgs, home-manager, stable, ... } @ inputs:
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    stable,
+    ...
+  } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    
+
     # Import centralized paths
-    paths = import ./lib/paths.nix { inherit inputs; };
-  in
-  {
+    paths = import ./lib/paths.nix {inherit inputs;};
+  in {
     nixosConfigurations.bok = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs paths;
@@ -30,12 +34,12 @@
     };
 
     homeConfigurations.matthieu = home-manager.lib.homeManagerConfiguration {
-      pkgs = pkgs; #nixpkgs.legacyPackages.x86_64-linux;
-      modules = [ 
+      pkgs = pkgs;
+      modules = [
         inputs.nvf.homeManagerModules.default
-        ./home.nix 
+        ./home.nix
       ];
-      extraSpecialArgs = { inherit inputs paths; };
+      extraSpecialArgs = {inherit inputs paths;};
     };
   };
 }
