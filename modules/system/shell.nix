@@ -1,5 +1,9 @@
-{ config, pkgs, paths, ... }:
 {
+  config,
+  pkgs,
+  paths,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     shellAliases = {
@@ -25,5 +29,6 @@
 
   home.packages = with pkgs; [
     eza
+    tree
   ];
 }
