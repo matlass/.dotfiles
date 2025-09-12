@@ -1,13 +1,15 @@
-{ config, pkgs, inputs, ... }:
-let
-in
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: let
+in {
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Bootloader
   boot.loader.systemd-boot.enable = false;
@@ -19,7 +21,7 @@ in
   boot.loader.efi.efiSysMountPoint = "/boot";
 
   #Kernel parametre
-  boot.kernelParams = [ "i915.enable_dpcd_backlight=3" ];
+  boot.kernelParams = ["i915.enable_dpcd_backlight=3"];
 
   services.greetd = {
     enable = true;
@@ -36,7 +38,8 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    vim 
+    vim
+    makedepend
     hyprlock
     swaynotificationcenter
     btop
@@ -61,7 +64,7 @@ in
   programs.kdeconnect.enable = true;
   security.polkit.enable = true;
 
-  networking.hostName = "bok"; 
+  networking.hostName = "bok";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -73,7 +76,7 @@ in
         Experimental = true;
       };
     };
-  };  
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
@@ -97,9 +100,9 @@ in
     layout = "fr";
     variant = "";
   };
-  
+
   services.upower.enable = true;
-  services.power-profiles-daemon.enable = true; 
+  services.power-profiles-daemon.enable = true;
   programs.zsh.enable = true;
   services.gvfs.enable = true;
 
@@ -108,7 +111,7 @@ in
   users.users.matthieu = {
     isNormalUser = true;
     description = "matthieu";
-    extraGroups = [ "networkmanager" "wheel" "input" ];
+    extraGroups = ["networkmanager" "wheel" "input"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
@@ -131,7 +134,7 @@ in
   programs.hyprland.enable = true;
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -162,5 +165,5 @@ in
   programs.steam = {
     enable = true;
   };
-  system.stateVersion = "25.05"; 
+  system.stateVersion = "25.05";
 }
