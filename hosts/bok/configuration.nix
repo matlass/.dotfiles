@@ -59,6 +59,7 @@ in {
     yazi
     rapidraw
     python3
+    protonup
   ];
 
   programs.kdeconnect.enable = true;
@@ -162,8 +163,24 @@ in {
     enable = true;
     enable32Bit = true;
   };
+
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
   programs.steam = {
     enable = true;
+    gamescopeSession.enable = true;
   };
+
+  programs.gamemode.enable = true;
+
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = 
+      "/home/user/.steam/root/compatibilitytools.d"
+  };
+
   system.stateVersion = "25.05";
 }
