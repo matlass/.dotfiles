@@ -95,6 +95,7 @@ in {
     LC_PAPER = "fr_FR.UTF-8";
     LC_TELEPHONE = "fr_FR.UTF-8";
     LC_TIME = "fr_FR.UTF-8";
+    LC_MESSAGES = "en_US.UTF-8"
   };
 
   # Configure keymap in X11
