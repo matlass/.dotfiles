@@ -54,6 +54,7 @@ in {
     brightnessctl
     libnotify
     hyprshot
+    satty
     beeper
     discord
     wofi
