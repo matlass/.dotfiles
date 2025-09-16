@@ -38,6 +38,7 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    auto-cpufreq
     vim
     makedepend
     hyprlock
