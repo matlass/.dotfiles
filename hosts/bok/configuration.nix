@@ -49,7 +49,7 @@ in {
   environment.systemPackages = with pkgs; [
     auto-cpufreq
     fprintd
-    libfprint-2
+    libfprint
     vim
     makedepend
     hyprlock
@@ -177,10 +177,6 @@ in {
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-  };
-
-  hardware.opengl = {
-    enable = true;
   };
 
   programs.steam = {
