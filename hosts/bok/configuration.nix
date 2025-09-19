@@ -45,6 +45,21 @@ in {
     sudo.fprintAuth = true;
     greetd.fprintAuth = true;
   };
+  {
+  # Make sure polkit is enabled:
+  services.polkit.enable = true;
+  # Add a polkit rule for fprintd:
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if (
+        action.id == "net.reactivated.fprint.device.enroll" &&
+        subject.isInGroup("wheel")
+      ) {
+        return polkit.Result.YES;
+      }
+    });
+  '';
+}
 
   environment.systemPackages = with pkgs; [
     auto-cpufreq
