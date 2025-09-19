@@ -160,7 +160,7 @@ in {
   system.autoUpgrade = {
     enable = true;
     dates = "weekly";
-    flake = inputs.dotfilesPath#bok;
+    flake = "${inputs.dotfilesPath}#bok";
   };
 
   hardware.graphics = {
