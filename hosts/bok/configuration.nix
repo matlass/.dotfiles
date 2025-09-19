@@ -38,8 +38,18 @@ in {
     };
   };
 
+  #fingerprint reader
+  services.fprintd.enable = true;
+  security.pam.services = {
+    login.fprintAuth = true;
+    sudo.fprintAuth = true;
+    greetd.fprintAuth = true;
+  };
+
   environment.systemPackages = with pkgs; [
     auto-cpufreq
+    fprintd
+    libfprint-2
     vim
     makedepend
     hyprlock
