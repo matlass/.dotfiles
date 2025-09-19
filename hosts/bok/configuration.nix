@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  paths,
   ...
 }: let
 in {
@@ -160,7 +161,7 @@ in {
   system.autoUpgrade = {
     enable = true;
     dates = "weekly";
-    flake = "${inputs.dotfilesPath}#bok";
+    flake = "${paths.dotfilesPath}#bok";
   };
 
   hardware.graphics = {
