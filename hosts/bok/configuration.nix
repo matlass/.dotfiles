@@ -45,7 +45,6 @@ in {
     sudo.fprintAuth = true;
     greetd.fprintAuth = true;
   };
-  {
   # Make sure polkit is enabled:
   services.polkit.enable = true;
   # Add a polkit rule for fprintd:
@@ -59,7 +58,6 @@ in {
       }
     });
   '';
-}
 
   environment.systemPackages = with pkgs; [
     auto-cpufreq
