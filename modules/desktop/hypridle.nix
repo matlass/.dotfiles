@@ -1,28 +1,32 @@
-{config, pkgs, paths, ...}:
 {
+  config,
+  pkgs,
+  paths,
+  ...
+}: {
   #Hypridle config
   services.hypridle = {
     enable = true;
     settings = {
       general = {
         lock_cmd = "hyprlock";
-	on_unlock_cmd = "notify-send 'Welcome back'";
-      }; 
+        on_unlock_cmd = "notify-send 'salus anculhez'";
+      };
 
       listener = [
-      {
-        timeout = 230;
-	on-timeout = "brightnessctl -s set 10";
-	on-resume = "brightnessctl -r";
-      }
-      {
-        timeout = 300;
-        on-timeout = "loginctl lock-session";
-      }
-      {
-        timeout = 600;
-	on-timeout = "systemctl suspend";
-      }
+        {
+          timeout = 230;
+          on-timeout = "brightnessctl -s set 10";
+          on-resume = "brightnessctl -r";
+        }
+        {
+          timeout = 300;
+          on-timeout = "loginctl lock-session";
+        }
+        {
+          timeout = 600;
+          on-timeout = "systemctl suspend";
+        }
       ];
     };
   };
@@ -40,7 +44,7 @@
 
     background {
         monitor =
-        path = ${paths.nixosAsciiWallpaper} 
+        path = ${paths.nixosAsciiWallpaper}
 
         color = rgb(0,0,0) # color will be rendered initially until path is available
 
@@ -71,7 +75,7 @@
         text = cmd[update:1000] echo "$(date +"%H")"
         color = rgb(878787)
         font_size = 200
-        font_family = JetBrainsMono Nerd Font ExtraBold 
+        font_family = JetBrainsMono Nerd Font ExtraBold
         position = 0, -60
         halign = center
         valign = top
@@ -160,3 +164,4 @@
     }
   '';
 }
+
