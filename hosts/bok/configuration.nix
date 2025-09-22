@@ -47,7 +47,6 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
-    auto-cpufreq
     fprintd
     libfprint
     vim
@@ -77,7 +76,7 @@ in {
 
   programs.kdeconnect.enable = true;
   security.polkit.enable = true;
-  services.auto-cpufreq.enable = true;
+
   networking.hostName = "bok";
 
   # Enable networking
