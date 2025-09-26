@@ -21,6 +21,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     NIXOS_OZONE_WL = "1";
+    QT_QPA_PLATFORM = "xcb";
   };
 
   home.packages = with pkgs; [
