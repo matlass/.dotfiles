@@ -6,4 +6,4 @@
   home.packages = with pkgs; [
     rescuetime
   ];
-;}
+}
