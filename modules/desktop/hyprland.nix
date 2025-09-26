@@ -1,12 +1,13 @@
-{config,pkgs, ...}:
-let
-in
 {
-
- wayland.windowManager.hyprland = {
+  config,
+  pkgs,
+  ...
+}: let
+in {
+  wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = [ ",preferred,auto,1" ];
+      monitor = [",preferred,auto,1"];
 
       env = [
         "HYPRCURSOE_THEME,pirate"
@@ -15,11 +16,12 @@ in
 
       exec-once = [
         "nm-applet & blueman-applet & waybar & hyprpaper & pkill swaync & swaync & kdeconnect-indicator &"
+        "rescuetime &"
       ];
 
       input = {
         kb_layout = "fr";
-      	kb_options = "caps:escape";
+        kb_options = "caps:escape";
         repeat_rate = 35;
         repeat_delay = 200;
         follow_mouse = 1;
@@ -130,9 +132,9 @@ in
         "$mainMod, k, movefocus, u"
         "$mainMod, j, movefocus, d"
         ",PRINT, exec, hyprshot -m window"
-	"shift, PRINT, exec, hyprshot -m region"
+        "shift, PRINT, exec, hyprshot -m region"
 
-	#workspace
+        #workspace
         "$mainMod, code:10, workspace, 1"
         "$mainMod, code:11, workspace, 2"
         "$mainMod, code:12, workspace, 3"
@@ -186,5 +188,4 @@ in
       "$menu" = "wofi --show drun --style ~/.config/wofi/style.css";
     };
   };
-
 }
