@@ -12,7 +12,7 @@
 
     Service = {
       Type = "simple";
-      ExecStart = "${pkgs.rescuetime}/bin/rescuetime";
+      ExecStart = "rescuetime";
       Restart = "on-failure";
       RestartSec = "5";
 
