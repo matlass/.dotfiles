@@ -15,7 +15,7 @@ in {
       ];
 
       exec-once = [
-        "nm-applet & blueman-applet & waybar & hyprpaper & pkill swaync & swaync & kdeconnect-indicator &"
+        "nm-applet & blueman-applet & waybar & hyprpaper & pkill swaync & swaync & kdeconnect-indicator & rescuetime &"
       ];
 
       input = {
