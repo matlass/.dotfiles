@@ -12,10 +12,10 @@
       splash = false;
       splash_offset = 2.0;
       preload = [
-        "${pkgs.nix-d-nord-purple}"
+        "${paths.nix-d-nord-purple}"
       ];
       wallpaper = [
-        ",${pkgs.nix-d-nord-purple}"
+        ",${paths.nix-d-nord-purple}"
       ];
     };
   };
