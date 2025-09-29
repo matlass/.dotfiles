@@ -15,7 +15,7 @@
         "${paths.nixDarkImage}"
       ];
       wallpaper = [
-        "${paths.nixDarkImage}"
+        ",${paths.nixDarkImage}"
       ];
     };
   };
