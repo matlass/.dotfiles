@@ -12,12 +12,10 @@
       splash = false;
       splash_offset = 2.0;
       preload = [
-        "${paths.nixDarkImage}"
-        "/home/matthieu/Downloads/nix-d-nord-purple.jpg"
+        "${pkgs.nix-d-nord-purple}"
       ];
       wallpaper = [
-        # ",${paths.nixDarkImage}"
-        ",/home/matthieu/Downloads/nix-d-nord-purple.jpg"
+        ",${pkgs.nix-d-nord-purple}"
       ];
     };
   };
