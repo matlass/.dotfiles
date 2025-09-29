@@ -12,7 +12,7 @@
       splash = false;
       splash_offset = 2.0;
       preload = [
-        "${paths.nixDarkImage}"
+        ",${paths.nixDarkImage}"
       ];
       wallpaper = [
         ",${paths.nixDarkImage}"
