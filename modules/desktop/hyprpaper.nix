@@ -1,5 +1,9 @@
-{config, pkgs, paths, ...}:
 {
+  config,
+  pkgs,
+  paths,
+  ...
+}: {
   #Hyprpaper config
   services.hyprpaper = {
     enable = true;
@@ -9,9 +13,11 @@
       splash_offset = 2.0;
       preload = [
         "${paths.nixDarkImage}"
+        "~/Downloads/nix-d-nord-purple.jpg"
       ];
       wallpaper = [
-        ",${paths.nixDarkImage}"
+        # ",${paths.nixDarkImage}"
+        "~/Downloads/nix-d-nord-purple.jpg"
       ];
     };
   };
