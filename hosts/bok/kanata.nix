@@ -3,10 +3,12 @@
   pkgs,
   ...
 }: {
+  # Enable uinput kernel module
   boot.kernelModules = ["uinput"];
 
+  # Make uinput accessible to all users (temporary fix)
   services.udev.extraRules = ''
-    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+    KERNEL=="uinput", MODE="0666", OPTIONS+="static_node=uinput"
   '';
 
   services.kanata = {
@@ -36,16 +38,6 @@
           )
         '';
       };
-    };
-  };
-
-  systemd.services.kanata-laptop = {
-    overrideStrategy = "asDropIn";
-    serviceConfig = {
-      DynamicUser = "no";
-      PrivateUsers = "no";
-      User = "matlass";
-      Group = "users";
     };
   };
 }
