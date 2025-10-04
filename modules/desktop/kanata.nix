@@ -3,15 +3,16 @@
   pkgs,
   ...
 }: {
-  # In your home-manager configuration
-  programs.kanata = {
+  services.kanata = {
     enable = true;
     keyboards = {
       laptop = {
         devices = [
-          # Add your keyboard device path here
-          "/dev/input/by-id/your-keyboard-device"
+          "/dev/input/event0" # Replace with your keyboard event number
         ];
+
+        extraDefCfg = "process-unmapped-keys yes";
+
         config = ''
           (defsrc
             a s d f j k l ;
