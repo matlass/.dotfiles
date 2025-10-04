@@ -8,6 +8,7 @@
 in {
   imports = [
     ./hardware-configuration.nix
+    ./kanata.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
