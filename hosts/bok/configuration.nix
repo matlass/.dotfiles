@@ -24,10 +24,6 @@ in {
 
   #Kernel parametre
   boot.kernelParams = ["i915.enable_dpcd_backlight=3"];
-  boot.kernelModules = ["uinput"];
-  services.udev.extraRules = ''
-    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
-  '';
 
   services.greetd = {
     enable = true;
