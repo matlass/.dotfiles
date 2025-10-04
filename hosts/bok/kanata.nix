@@ -8,7 +8,7 @@
     keyboards = {
       laptop = {
         devices = [
-          "/dev/input/event0" # Replace with your keyboard event number
+          "/dev/input/event0"
         ];
 
         extraDefCfg = "process-unmapped-keys yes";
@@ -35,5 +35,8 @@
         '';
       };
     };
+  };
+  systemd.services.kanata-laptop.serviceConfig = {
+    SupplementaryGroups = ["input" "uinput"];
   };
 }
