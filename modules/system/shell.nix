@@ -12,6 +12,9 @@
       hrs = "${paths.homeManagerRebuildScript}";
       ls = "eza --icons=always --git --color=always";
     };
+    initExtra = ''
+      nohup oneko
+    '';
     autocd = true;
     enableCompletion = true;
     autosuggestion.enable = true;
