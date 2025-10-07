@@ -20,6 +20,7 @@
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+
     paths = import ./lib/paths.nix {inherit inputs;};
   in {
     nixosConfigurations.bok = nixpkgs.lib.nixosSystem {
