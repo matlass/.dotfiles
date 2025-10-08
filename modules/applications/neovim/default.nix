@@ -44,7 +44,7 @@
     # System
     nodejs
     gcc
-    makedepend
+    gnumake
     libclang
 
     # Language servers
