@@ -64,6 +64,6 @@
 
     #library for C
     libpng
-    pkgconfig
+    pkg-config
   ];
 }
