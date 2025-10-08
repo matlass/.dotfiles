@@ -1,6 +1,9 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./options.nix
     ./ui.nix
@@ -58,5 +61,7 @@
     gopls
     html-tidy
     nodePackages.vscode-langservers-extracted # html, css, json, eslint
+
+    libpng-dev
   ];
 }
