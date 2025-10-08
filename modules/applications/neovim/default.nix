@@ -58,7 +58,7 @@
     nodePackages.vscode-langservers-extracted # html, css, json, eslint
 
     #library for C
-    libpng
+    libpng12
     pkg-config
   ];
 }
