@@ -62,6 +62,6 @@
     html-tidy
     nodePackages.vscode-langservers-extracted # html, css, json, eslint
 
-    libpng-dev
+    libpng
   ];
 }
