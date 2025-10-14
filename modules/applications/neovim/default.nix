@@ -58,6 +58,7 @@
     nodePackages.vscode-langservers-extracted # html, css, json, eslint
 
     #library for C
+    pkg-config
     SDL2
     SDL2_image
   ];
