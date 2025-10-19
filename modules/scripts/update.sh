@@ -25,9 +25,6 @@ git commit -m "$COMMIT_MSG 1"
 echo "Upgrading NixOS system ($HOST)..."
 sudo nixos-rebuild switch --flake "$FLAKE_PATH#$HOST"
 
-git add .
-git commit -m "$COMMIT_MSG end"
-
 echo "Upgrading Home Manager user config ($USER_OUT)..."
 home-manager --flake "$FLAKE_PATH#$USER_OUT" switch
 
