@@ -70,7 +70,7 @@ in {
     yazi
     rapidraw
     python3
-    protonup
+    protonup-ng
   ];
 
   programs.kdeconnect.enable = true;
