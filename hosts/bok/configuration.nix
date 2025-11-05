@@ -134,7 +134,7 @@ in {
   fonts.packages = with pkgs; [
     inter
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     noto-fonts-cjk-sans
     font-awesome
     material-design-icons
