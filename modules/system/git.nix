@@ -5,9 +5,11 @@
 }: {
   programs.git = {
     enable = true;
-    userName = "matlass_";
-    userEmail = "matthieu@thefau.com";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "matlass_";
+        email = "matthieu@thefau.com";
+      };
       pull.rebase = false;
       include.path = "~/.config/.gitconfig-private";
     };
