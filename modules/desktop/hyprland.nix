@@ -13,7 +13,7 @@ in {
       windowrulev2 = [
         "workspace 1, class:^(kitty)$"
         "workspace 2, class:^(brave-browser)$"
-        "workspace 9, class:^(discord)$"
+        "workspace 9 silence, class:^(discord)$"
         "workspace 10, class:^(Spotify)$"
       ];
 
@@ -26,7 +26,7 @@ in {
         "swaync &"
         "kdeconnect-indicator &"
         "discord"
-        "spotify"
+        "hyprctl dispatch workspaces 1"
       ];
 
       input = {
