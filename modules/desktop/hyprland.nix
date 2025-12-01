@@ -13,14 +13,14 @@ in {
         "HYPRCURSOE_THEME,pirate"
         "HYPRCURSOR_SIZE,24"
       ];
-
-      windowrulev2 = [
-        "workspace 1 silent, class:^(kitty)$"
-        "workspace 2 silent, class:^(brave)$"
-        "workspace 9 silent, class:^(discord)$"
-        "workspace 10 silent, class:^(Spotify)$"
-      ];
-
+      #
+      # windowrulev2 = [
+      #   "workspace 1 silent, class:^(kitty)$"
+      #   "workspace 2 silent, class:^(brave)$"
+      #   "workspace 9 silent, class:^(discord)$"
+      #   "workspace 10 silent, class:^(Spotify)$"
+      # ];
+      #
       exec-once = [
         "nm-applet &"
         "blueman-applet &"
@@ -29,10 +29,12 @@ in {
         "pkill swaync &"
         "swaync &"
         "kdeconnect-indicator &"
-        "kitty"
-        "brave"
-        "discord"
-        "spotify"
+        "[workspace 1 silent] kitty"
+
+        # "kitty"
+        # "brave"
+        # "discord"
+        # "spotify"
       ];
 
       input = {
