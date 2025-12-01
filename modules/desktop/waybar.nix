@@ -14,7 +14,7 @@
         spacing = 0;
 
         modules-left = ["hyprland/workspaces" "cpu"];
-        modules-center = ["clock"];
+        modules-center = ["clock" "mpris"];
         modules-right = ["bluetooth" "network" "pulseaudio" "backlight" "battery" "tray"];
 
         "hyprland/workspaces" = {
@@ -48,6 +48,23 @@
           tooltip = false;
           format = "{:%H:%M:%S  -  %A, %d}";
           interval = 1;
+        };
+        mpris = {
+          format = "{player_icon} {title} - {artist}";
+          format-paused = "{status_icon} <i>{title}</i>";
+          player-icons = {
+            default = "󰝚";
+            spotify = "󰓇";
+            firefox = "󰈹";
+            chrome = "󰊯";
+          };
+          status-icons = {
+            paused = "󰏤";
+            playing = "󰐊";
+            stopped = "󰓛";
+          };
+          max-length = 50;
+          on-click = "playerctl play-pause";
         };
 
         network = {
