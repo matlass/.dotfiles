@@ -21,7 +21,7 @@
         package = pkgs.vimUtils.buildVimPlugin {
           name = "ts-comments.nvim";
           src = builtins.fetchGit {
-            url = "https://github. com/folke/ts-comments.nvim";
+            url = "https://github.com/folke/ts-comments.nvim";
             ref = "main";
             allRefs = true;
           };
