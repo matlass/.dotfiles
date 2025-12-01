@@ -20,10 +20,11 @@
           format-icons = {
             active = "";
             default = "";
+            1 = "";
+            2 = "";
+            9 = "";
+            10 = "";
           };
-        #   persistent-workspaces = {
-        #     "*" = 5;
-        #   };
          };
 
         bluetooth = {
