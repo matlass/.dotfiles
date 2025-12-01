@@ -131,7 +131,8 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nvf": "nvf",
-        "stable": "stable"
+        "stable": "stable",
+        "ts-comments-nvim": "ts-comments-nvim"
       }
     },
     "stable": {
@@ -162,6 +163,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "ts-comments-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1761664561,
+        "narHash": "sha256-ORK3XpHANaqvp1bfMG2GJmAiaOsLoGW82ebL/FJtKaA=",
+        "owner": "folke",
+        "repo": "ts-comments.nvim",
+        "rev": "123a9fb12e7229342f807ec9e6de478b1102b041",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "ts-comments.nvim",
         "type": "github"
       }
     }
