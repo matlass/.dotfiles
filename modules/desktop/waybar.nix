@@ -30,7 +30,7 @@
         };
 
         "custom/media" = {
-          format = "{icon}";
+          format = "{icon} {name}";
           return-type = "json";
           format-icons = {
             Playing = "";
@@ -39,40 +39,30 @@
           };
           max-length = 50;
           exec = "${pkgs.writeShellScript "waybar-media" ''
-            #!/bin/sh
-            status=$(${pkgs. playerctl}/bin/playerctl status 2>/dev/null)
+            #! ${pkgs.bash}/bin/bash
+
+            status=$(${pkgs.playerctl}/bin/playerctl status 2>/dev/null)
 
             if [ -z "$status" ] || [ "$status" = "Stopped" ]; then
-              printf '{"text":"","class":"Stopped","alt":"Stopped"}\n'
+              echo '{"text":"","class":"Stopped","alt":"Stopped"}'
               exit 0
             fi
 
             title=$(${pkgs.playerctl}/bin/playerctl metadata title 2>/dev/null || echo "No Title")
             artist=$(${pkgs.playerctl}/bin/playerctl metadata artist 2>/dev/null || echo "Unknown Artist")
 
-            # Escape special characters for JSON
-            title=$(echo "$title" | sed 's/"/\\"/g' | sed "s/'/\\'/g")
-            artist=$(echo "$artist" | sed 's/"/\\"/g' | sed "s/'/\\'/g")
+            # Escape quotes for JSON
+            title=$(echo "$title" | ${pkgs.gnused}/bin/sed 's/"/\\"/g')
+            artist=$(echo "$artist" | ${pkgs.gnused}/bin/sed 's/"/\\"/g')
 
-            printf '{"text":"%s - %s","class":"%s","alt":"%s","tooltip":"%s - %s"}\n' \
-              "$title" "$artist" "$status" "$status" "$title" "$artist"
+            echo "{\"text\":\"$title - $artist\",\"class\":\"$status\",\"alt\":\"$status\",\"tooltip\":\"$title - $artist\"}"
           ''}";
           interval = 2;
-          on-click = "${pkgs.writeShellScript "toggle-music-popup" ''
-            #!/bin/sh
-            if pgrep -x eww > /dev/null; then
-              if ${pkgs.eww}/bin/eww windows | grep -q "\*music-popup"; then
-                ${pkgs.eww}/bin/eww close music-popup
-              else
-                ${pkgs.eww}/bin/eww open music-popup
-              fi
-            else
-              echo "eww is not running"
-            fi
-          ''}";
+          on-click = "${pkgs.playerctl}/bin/playerctl play-pause";
           on-click-right = "${pkgs.playerctl}/bin/playerctl next";
-          on-click-middle = "${pkgs.playerctl}/bin/playerctl previous";
+          on-click-middle = "${pkgs. playerctl}/bin/playerctl previous";
         };
+
         bluetooth = {
           format = "󰂲";
           format-on = "{icon}";
