@@ -16,7 +16,7 @@ in {
 
       windowrulev2 = [
         "workspace 1 silent, class:^(kitty)$"
-        "workspace 2 silent, class:^(brave)$"
+        "workspace 2 silent, class:^(brave-browser)$"
         "workspace 9 silent, class:^(discord)$"
         "workspace 10 silent, class:^(Spotify)$"
       ];
