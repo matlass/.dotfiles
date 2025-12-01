@@ -5,7 +5,7 @@
 }: {
   programs.eww = {
     enable = true;
-    configDir = ./eww;
+    configDir = ./widgets;
   };
 
   home.packages = with pkgs; [
