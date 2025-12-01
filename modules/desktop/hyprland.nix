@@ -29,7 +29,10 @@ in {
         "pkill swaync &"
         "swaync &"
         "kdeconnect-indicator &"
-        "[workspace 1 silent] kitty"
+        "[workspace 2 silent] brave &"
+        "[workspace 9 silent] discord &"
+        "[workspace 0 silent] spotify &"
+        "[workspace 1 silent] kitty &"
 
         # "kitty"
         # "brave"
