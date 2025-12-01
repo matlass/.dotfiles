@@ -16,7 +16,7 @@
       #   event = ["BufReadPost" "BufNewFile"];
       # };
       #
-      "vimplugin-ts-comments.nvim" = {
+      "ts-comments.nvim" = {
         package = pkgs.vimUtils.buildVimPlugin;
         setupModule = "ts-comments";
         cmd = ["ts-comments"];
