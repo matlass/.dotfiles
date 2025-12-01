@@ -14,45 +14,18 @@
         spacing = 0;
 
         modules-left = ["hyprland/workspaces" "cpu"];
-        modules-center = ["clock" "mpris"];
+        modules-center = ["clock"];
         modules-right = ["bluetooth" "network" "pulseaudio" "backlight" "battery" "tray"];
-
-        mpris = {
-          format = "{player_icon}";
-          format-paused = "{status_icon}";
-          player-icons = {
-            default = "";
-            spotify = "";
-            firefox = "";
-          };
-          status-icons = {
-            paused = "";
-            playing = "";
-            stopped = "";
-          };
-          tooltip-format = "{player} - {title}\n{artist}\n{album}";
-          on-click = "${pkgs.writeShellScript "toggle-music-popup" ''
-            if pgrep -x eww > /dev/null; then
-              if eww windows | grep -q "*music-popup"; then
-                eww close music-popup
-              else
-                eww open music-popup
-              fi
-            fi
-          ''}";
-          on-click-right = "${pkgs.playerctl}/bin/playerctl next";
-          on-click-middle = "${pkgs.playerctl}/bin/playerctl previous";
-        };
 
         "hyprland/workspaces" = {
           format = "{name}: {icon}";
           format-icons = {
-            active = "";
-            default = "";
-            "1" = "";
-            "2" = "";
-            "9" = "";
-            "10" = "";
+            active = "";
+            default = "";
+            "1" = "";
+            "2" = "";
+            "9" = "";
+            "10" = "";
           };
         };
 
@@ -88,22 +61,22 @@
 
         cpu = {
           interval = 1;
-          format = "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%";
+          format = "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%";
           format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           on-click = "kitty -e btop";
         };
 
         backlight = {
           format = "{icon}  {percent}%";
-          format-icons = ["" "󰃜" "󰃛" "󰃞" "󰃝" "󰃟" "󰃠"];
+          format-icons = ["" "󰃜" "󰃛" "󰃞" "󰃝" "󰃟" "󰃠"];
           tooltip = false;
         };
 
         pulseaudio = {
           format = "{icon}  {volume}%";
-          format-muted = "";
+          format-muted = "";
           format-icons = {
-            default = ["" "" " "];
+            default = ["" "" " "];
           };
           on-click = "pavucontrol";
         };
@@ -116,16 +89,16 @@
           };
           format = "{icon}  {capacity}%";
           format-full = "{icon}  {capacity}%";
-          format-charging = " {capacity}%";
-          format-plugged = " {capacity}%";
+          format-charging = " {capacity}%";
+          format-plugged = " {capacity}%";
           format-alt = "{icon} {time}";
-          format-icons = ["" "" "" "" ""];
+          format-icons = ["" "" "" "" ""];
         };
 
         "custom/lock" = {
           tooltip = false;
           on-click = "sh -c '(sleep 0s; hyprlock)' & disown";
-          format = "";
+          format = "";
         };
       };
     };
@@ -191,7 +164,7 @@
         outline: none;
       }
 
-      #workspaces button. active {
+      #workspaces button.active {
         color: #99d1db;
         background-color: rgba(153, 209, 219, 0.1);
         box-shadow: inset 0 0 0 1px rgba(153, 209, 219, 0.2);
@@ -219,31 +192,42 @@
         background-color: rgba(153, 209, 219, 0.1); /* Brighter highlight */
       }
 
-
-      /* --- MPRIS Media Player Module --- */
-      #mpris {
-        background-color: #1a1b26;
-        padding: 0.3rem 0.7rem;
-        margin: 5px 5px 5px 0px;
-        border-radius: 6px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        min-width: 0;
-        border: none;
-        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-        color: #a6d189;
-        font-size: 16px;
+      #custom-pomodoro {
+          background-color: #1a1b26; /* Consistent dark background */
+          padding: 0.3rem 0.7rem; /* Consistent padding with other modules (e.g., cpu, uptime) */
+          margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
+          border-radius: 6px; /* Consistent rounded corners with other individual modules */
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+          min-width: 0;
+          border: none;
+          outline: none; /* Ensure no default outline */
+          /* Transition for background-color, color, outline, and box-shadow for smooth effect */
+          transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, outline 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+          color: #babbf1; /* A calm color, consistent with custom-uptime */
+          font-weight: 600; /* Slightly bolder for the timer, consistent with clock */
       }
 
-      #mpris:hover {
-        background-color: rgb(41, 42, 53);
+      /* Positioning and spacing for the custom-pomodoro module */
+      #custom-pomodoro {
+          margin-left: 5px; /* Spacing from the previous module (e.g., clock) */
+          margin-right: 5px; /* Spacing before the seamless right bar starts (e.g., bluetooth) */
       }
 
-      #mpris. paused {
-        color: #e78284;
+      /* Hover effect for the new pomodoro module (consistent with others + rectangular outline) */
+      #custom-pomodoro:hover {
+          background-color: rgb(41, 42, 53); /* Brighter highlight, consistent with other individual modules */
+          color: #c6d0f5; /* Text color change on hover, consistent with other individual modules */
+          outline: 1px solid rgba(255, 255, 255, 0.1); /* Rectangular outline on hover */
+          outline-offset: -1px;
       }
 
-      #mpris.stopped {
-        color: #585b70;
+      /* --- Highlighted state for Pomodoro module when running (work or break) --- */
+      #custom-pomodoro.work,
+      #custom-pomodoro.break {
+        color: #99d1db; /* Text color consistent with active workspaces button */
+        background-color: rgba(153, 209, 219, 0.1); /* Background color consistent with active workspaces button */
+        box-shadow: inset 0 0 0 1px rgba(153, 209, 219, 0.2); /* Inner shadow for outline effect */
+        outline: none;
       }
 
       /* --- Right Modules (Single, Seamless Bar ) --- */
@@ -307,7 +291,7 @@
         color: #c6d0f5;
       }
 
-      #network. disconnected {
+      #network.disconnected {
         color: #e78284;
       }
 
@@ -327,7 +311,7 @@
       #battery {
         color: #99d1db;;
       }
-      #battery. charging {
+      #battery.charging {
         color: #a6d189;
       }
       #battery.warning:not(.charging) {
