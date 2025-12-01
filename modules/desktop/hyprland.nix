@@ -27,7 +27,6 @@ in {
         "pkill swaync &"
         "swaync &"
         "kdeconnect-indicator &"
-        "hypr brave &"
         "hyprctl dispatch workspace 1"
         "kitty"
         "hyprctl dispatch workspace 2"
