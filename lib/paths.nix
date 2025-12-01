@@ -4,6 +4,7 @@
 in {
   # Base repository paths
   dotfilesPath = "${repoRoot}";
+  flakePath = "${repoRoot}/flake.nix";
 
   # Module paths
   modulesPath = "${repoRoot}/modules";

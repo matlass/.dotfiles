@@ -24,6 +24,10 @@
     QT_QPA_PLATFORM = "xcb";
   };
 
+  services.home-manager.autoUpgrade = {
+    useFlake = true;
+    flakeDir = paths.flakePath;
+  };
   home.packages = with pkgs; [
     oneko
   ];
