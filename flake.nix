@@ -9,6 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvf.url = "github:notashelf/nvf";
+    ts-comments-nvim = {
+      url = "github:folke/ts-comments.nvim";
+      flake = false;
+    };
   };
 
   outputs = {

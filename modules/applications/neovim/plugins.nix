@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.nvf.settings.vim = {
     lazy.plugins = {
       # Enhanced comments with treesitter
@@ -16,15 +20,10 @@
       #   event = ["BufReadPost" "BufNewFile"];
       # };
       #
-
       "ts-comments.nvim" = {
-        package = pkgs.vimUtils.buildVimPlugin {
+        package = pkgs. vimUtils.buildVimPlugin {
           name = "ts-comments.nvim";
-          src = builtins.fetchGit {
-            url = "https://github.com/folke/ts-comments.nvim";
-            ref = "main";
-            allRefs = true;
-          };
+          src = inputs.ts-comments-nvim;
         };
         setupModule = "ts-comments";
         event = ["BufReadPost" "BufNewFile"];
