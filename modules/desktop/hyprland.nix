@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{...}: let
 in {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -29,8 +25,6 @@ in {
         "pkill swaync &"
         "swaync &"
         "kdeconnect-indicator &"
-        "kitty"
-        "brave"
         "discord"
         "spotify"
       ];
