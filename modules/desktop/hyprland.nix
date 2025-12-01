@@ -15,6 +15,8 @@ in {
       ];
 
       windowrulev2 = [
+        "workspace 1 silent, class:^(kitty)$"
+        "workspace 2 silent, class:^(brave)$"
         "workspace 9 silent, class:^(discord)$"
         "workspace 10 silent, class:^(Spotify)$"
       ];
@@ -27,9 +29,7 @@ in {
         "pkill swaync &"
         "swaync &"
         "kdeconnect-indicator &"
-        "hyprctl dispatch workspace 1"
         "kitty"
-        "hyprctl dispatch workspace 2"
         "brave"
         "discord"
         "spotify"
