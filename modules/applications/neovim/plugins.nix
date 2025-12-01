@@ -16,14 +16,19 @@
       #   event = ["BufReadPost" "BufNewFile"];
       # };
       #
+
       "ts-comments.nvim" = {
-        package = pkgs.vimUtils.buildVimPlugin;
+        package = pkgs.vimUtils.buildVimPlugin {
+          name = "ts-comments.nvim";
+          src = builtins.fetchGit {
+            url = "https://github. com/folke/ts-comments.nvim";
+            ref = "main";
+            allRefs = true;
+          };
+        };
         setupModule = "ts-comments";
-        cmd = ["ts-comments"];
-        after = ''require("ts-comments")'';
         event = ["BufReadPost" "BufNewFile"];
       };
-
       # Advanced search and replace
       "grug-far.nvim" = {
         package = pkgs.vimPlugins.grug-far-nvim;
