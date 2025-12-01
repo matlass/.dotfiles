@@ -15,10 +15,10 @@ in {
       ];
 
       windowrulev2 = [
-        "workspace 1 silent, class:^(kitty)$"
-        "workspace 2 silent, class:^(brave-browser)$"
-        "workspace 9 silent, class:^(discord)$"
-        "workspace 10 silent, class:^(Spotify)$"
+        "workspace 1, class:^(kitty)$"
+        "workspace 2, class:^(brave-browser)$"
+        "workspace 9, class:^(discord)$"
+        "workspace 10, class:^(Spotify)$"
       ];
 
       exec-once = [
