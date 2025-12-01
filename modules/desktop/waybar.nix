@@ -14,7 +14,7 @@
         spacing = 0;
 
         modules-left = ["hyprland/workspaces" "cpu"];
-        modules-center = ["clock" "custom/media"];
+        modules-center = ["clock"];
         modules-right = ["bluetooth" "network" "pulseaudio" "backlight" "battery" "tray"];
 
         "hyprland/workspaces" = {
@@ -27,40 +27,6 @@
             "9" = "";
             "10" = "";
           };
-        };
-
-        "custom/media" = {
-          format = "{icon} {name}";
-          return-type = "json";
-          format-icons = {
-            Playing = "";
-            Paused = "";
-            Stopped = "";
-          };
-          max-length = 50;
-          exec = "${pkgs.writeShellScript "waybar-media" ''
-            #! ${pkgs.bash}/bin/bash
-
-            status=$(${pkgs.playerctl}/bin/playerctl status 2>/dev/null)
-
-            if [ -z "$status" ] || [ "$status" = "Stopped" ]; then
-              echo '{"text":"","class":"Stopped","alt":"Stopped"}'
-              exit 0
-            fi
-
-            title=$(${pkgs.playerctl}/bin/playerctl metadata title 2>/dev/null || echo "No Title")
-            artist=$(${pkgs.playerctl}/bin/playerctl metadata artist 2>/dev/null || echo "Unknown Artist")
-
-            # Escape quotes for JSON
-            title=$(echo "$title" | ${pkgs.gnused}/bin/sed 's/"/\\"/g')
-            artist=$(echo "$artist" | ${pkgs.gnused}/bin/sed 's/"/\\"/g')
-
-            echo "{\"text\":\"$title - $artist\",\"class\":\"$status\",\"alt\":\"$status\",\"tooltip\":\"$title - $artist\"}"
-          ''}";
-          interval = 2;
-          on-click = "${pkgs.playerctl}/bin/playerctl play-pause";
-          on-click-right = "${pkgs.playerctl}/bin/playerctl next";
-          on-click-middle = "${pkgs. playerctl}/bin/playerctl previous";
         };
 
         bluetooth = {
@@ -224,35 +190,6 @@
       /* Simple Hover effect for clock module - BRIGHTER COLOR */
       #clock:hover {
         background-color: rgba(153, 209, 219, 0.1); /* Brighter highlight */
-      }
-
-      #custom-media {
-        background-color: #1a1b26;
-        padding: 0.3rem 0.7rem;
-        margin: 5px 5px 5px 0px;
-        border-radius: 6px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        min-width: 0;
-        border: none;
-        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-        color: #babbf1;
-        font-size: 14px;
-      }
-
-      #custom-media:hover {
-        background-color: rgb(41, 42, 53);
-      }
-
-      #custom-media.Playing {
-        color: #a6d189;
-      }
-
-      #custom-media.Paused {
-        color: #e78284;
-      }
-
-      #custom-media.Stopped {
-        color: #585b70;
       }
 
       /* --- Right Modules (Single, Seamless Bar ) --- */
