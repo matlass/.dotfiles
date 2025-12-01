@@ -1,0 +1,60 @@
+(defwindow music-popup
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "50px"
+                      :width "450px"
+                      :height "150px"
+                      :anchor "top right")
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  (music-widget))
+
+(defwidget music-widget []
+  (box :class "music-container"
+       :orientation "h"
+       :space-evenly false
+    (box :class "album-art"
+         :style "background-image: url('${music-art}');")
+    (box :class "music-info"
+         :orientation "v"
+         :space-evenly false
+         :spacing 10
+      (box :orientation "v" :space-evenly false :spacing 5
+        (label :class "music-title" :text music-title :limit-width 30 :halign "start")
+        (label :class "music-artist" :text music-artist :limit-width 30 :halign "start"))
+      (box :class "music-progress" :orientation "v" :space-evenly false
+        (scale :class "progress-bar"
+               :value music-position-percent
+               :min 0
+               :max 100
+               :onchange "playerctl position \${}")
+        (box :class "music-times" :orientation "h" :space-evenly true
+          (label :text music-position-time :halign "start")
+          (label :text music-length-time :halign "end")))
+      (box :class "music-controls" :orientation "h" :halign "center" :spacing 15
+        (button :class "music-btn" :onclick "playerctl previous" "")
+        (button :class "music-btn play-pause" :onclick "playerctl play-pause" 
+                "\${music-status == 'Playing' ? '' : ''}")
+        (button :class "music-btn" :onclick "playerctl next" "")))))
+
+(defpoll music-title :interval "1s"
+  "playerctl metadata title 2>/dev/null || echo 'No Music Playing'")
+
+(defpoll music-artist :interval "1s"
+  "playerctl metadata artist 2>/dev/null || echo 'Unknown Artist'")
+
+(defpoll music-art :interval "1s"
+  "playerctl metadata mpris:artUrl 2>/dev/null | sed 's|file://||' || echo '/tmp/default-album. png'")
+
+(defpoll music-status :interval "1s"
+  "playerctl status 2>/dev/null || echo 'Stopped'")
+
+(defpoll music-position-percent :interval "1s"
+  "bash -c 'pos=$(playerctl position 2>/dev/null | cut -d.  -f1); len=$(playerctl metadata mpris:length 2>/dev/null); if [ -n \"$pos\" ] && [ -n \"$len\" ] && [ \"$len\" -gt 0 ]; then echo \"scale=2; ($pos * 1000000) / $len * 100\" | bc; else echo 0; fi'")
+
+(defpoll music-position-time :interval "1s"
+  "playerctl metadata --format '{{ duration(position) }}' 2>/dev/null || echo '0:00'")
+
+(defpoll music-length-time :interval "1s"
+  "playerctl metadata --format '{{ duration(mpris:length) }}' 2>/dev/null || echo '0:00'")

@@ -19,6 +19,7 @@ in {
 
       exec-once = [
         "nm-applet &"
+        "eww daemon &"
         "blueman-applet &"
         "waybar &"
         "hyprpaper &"

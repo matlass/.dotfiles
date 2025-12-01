@@ -1,0 +1,104 @@
+* {
+  all: unset;
+  font-family: "SF Pro Text", "Inter", sans-serif;
+}
+
+. music-container {
+  background-color: #1a1b26;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.album-art {
+  min-width: 120px;
+  min-height: 120px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-right: 15px;
+  background-color: #2a2b36;
+}
+
+.music-info {
+  min-width: 280px;
+}
+
+.music-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #c6d0f5;
+}
+
+.music-artist {
+  font-size: 13px;
+  color: #babbf1;
+}
+
+.music-progress {
+  margin-top: 10px;
+}
+
+.progress-bar {
+  min-height: 4px;
+  background-color: #2a2b36;
+  border-radius: 2px;
+}
+
+.progress-bar trough {
+  min-height: 4px;
+  background-color: #2a2b36;
+  border-radius: 2px;
+}
+
+.progress-bar progress {
+  min-height: 4px;
+  background-color: #99d1db;
+  border-radius: 2px;
+}
+
+.progress-bar highlight {
+  min-height: 4px;
+  background-color: #99d1db;
+  border-radius: 2px;
+}
+
+.music-times {
+  margin-top: 5px;
+  font-size: 11px;
+  color: #838ba7;
+}
+
+.music-times label {
+  margin: 0 5px;
+}
+
+.music-controls {
+  margin-top: 10px;
+}
+
+.music-btn {
+  font-size: 20px;
+  color: #c6d0f5;
+  background-color: #2a2b36;
+  border-radius: 50%;
+  padding: 8px 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.music-btn:hover {
+  background-color: #3a3b46;
+  color: #99d1db;
+}
+
+. music-btn. play-pause {
+  font-size: 24px;
+  background-color: #99d1db;
+  color: #1a1b26;
+  padding: 10px 14px;
+}
+
+.music-btn.play-pause:hover {
+  background-color: #a9e1ea;
+}
