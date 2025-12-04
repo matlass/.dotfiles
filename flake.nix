@@ -51,8 +51,8 @@
         with pkgs; [
           gcc
           gnumake
-          sdl2
-          sdl2_image
+          SDL2
+          SDL2_image
         ];
       runScript = "bash";
       profile = ''
