@@ -1,0 +1,11 @@
+{
+  config,
+  pkgs,
+  ...
+}: {
+  home.packages = with pkgs; [
+    sdl2
+    sdl2_image
+    pkg-config
+  ];
+}

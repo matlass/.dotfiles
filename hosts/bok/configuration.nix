@@ -71,6 +71,10 @@ in {
     rapidraw
     python3
     protonup-ng
+
+    sdl2
+    sdl2_image
+    pkg-config
   ];
 
   programs.kdeconnect.enable = true;
