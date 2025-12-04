@@ -45,7 +45,7 @@
       extraSpecialArgs = {inherit inputs paths;};
     };
     #For gcc
-    packages.${system}.sdl-fhs = pkgs.buildFHSEnv {
+    packages. ${system}.sdl-fhs = pkgs.buildFHSEnv {
       name = "sdl-dev";
       targetPkgs = pkgs:
         with pkgs; [
@@ -56,7 +56,7 @@
         ];
       runScript = "bash";
       profile = ''
-        export SDL2_INCLUDE_PATH="${pkgs.SDL2.dev}/include/SDL2"
+        export SDL2_INCLUDE_PATH="${pkgs.SDL2. dev}/include/SDL2"
         export C_INCLUDE_PATH="${pkgs.SDL2.dev}/include:${pkgs.SDL2_image.dev}/include"
         export LIBRARY_PATH="${pkgs.SDL2}/lib:${pkgs.SDL2_image}/lib"
       '';
