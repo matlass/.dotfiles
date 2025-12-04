@@ -72,8 +72,8 @@ in {
     python3
     protonup-ng
 
-    sdl2
-    sdl2_image
+    SDL2
+    SDL2_image
     pkg-config
   ];
 
