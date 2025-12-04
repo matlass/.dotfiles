@@ -56,9 +56,9 @@
         ];
       runScript = "bash";
       profile = ''
-        export SDL2_INCLUDE_PATH="${pkgs.SDL2. dev}/include/SDL2"
-        export C_INCLUDE_PATH="${pkgs.SDL2. dev}/include:${pkgs. sdl2_image.dev}/include"
-        export LIBRARY_PATH="${pkgs.SDL2}/lib:${pkgs.sdl2_image}/lib"
+        export SDL2_INCLUDE_PATH="${pkgs.SDL2.dev}/include/SDL2"
+        export C_INCLUDE_PATH="${pkgs.SDL2.dev}/include:${pkgs.SDL2_image.dev}/include"
+        export LIBRARY_PATH="${pkgs.SDL2}/lib:${pkgs.SDL2_image}/lib"
       '';
     };
     devShells.${system}.default = self.packages.${system}.sdl-fhs. env;
