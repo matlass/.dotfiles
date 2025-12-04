@@ -44,23 +44,23 @@
       ];
       extraSpecialArgs = {inherit inputs paths;};
     };
+    #For gcc
+    packages.${system}.sdl-fhs = pkgs.buildFHSEnv {
+      name = "sdl-dev";
+      targetPkgs = pkgs:
+        with pkgs; [
+          gcc
+          gnumake
+          sdl2
+          sdl2_image
+        ];
+      runScript = "bash";
+      profile = ''
+        export SDL2_INCLUDE_PATH="${pkgs.sdl2. dev}/include/SDL2"
+        export C_INCLUDE_PATH="${pkgs.sdl2. dev}/include:${pkgs. sdl2_image.dev}/include"
+        export LIBRARY_PATH="${pkgs.sdl2}/lib:${pkgs.sdl2_image}/lib"
+      '';
+    };
+    devShells.${system}.default = self.packages.${system}.sdl-fhs. env;
   };
-  #For gcc
-  packages.${system}.sdl-fhs = pkgs.buildFHSEnv {
-    name = "sdl-dev";
-    targetPkgs = pkgs:
-      with pkgs; [
-        gcc
-        gnumake
-        sdl2
-        sdl2_image
-      ];
-    runScript = "bash";
-    profile = ''
-      export SDL2_INCLUDE_PATH="${pkgs.sdl2. dev}/include/SDL2"
-      export C_INCLUDE_PATH="${pkgs.sdl2. dev}/include:${pkgs. sdl2_image.dev}/include"
-      export LIBRARY_PATH="${pkgs.sdl2}/lib:${pkgs.sdl2_image}/lib"
-    '';
-  };
-  devShells.${system}.default = self.packages.${system}.sdl-fhs. env;
 }
