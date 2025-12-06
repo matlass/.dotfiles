@@ -41,7 +41,7 @@
       };
       theme.font = {
         name = "CaskaydiaCove NF";
-        size = "8px";
+        size = "12px";
       };
     };
   };
