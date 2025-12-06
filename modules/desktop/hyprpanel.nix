@@ -37,11 +37,12 @@
             military = true;
             hideSeconds = true;
           };
+          weather.unit = "metric";
         };
       };
       theme.font = {
         name = "CaskaydiaCove NF";
-        size = "12px";
+        size = "14px";
       };
     };
   };
