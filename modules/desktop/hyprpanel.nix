@@ -5,9 +5,22 @@
       layout = {
         bar.layouts = {
           "0" = {
-            left = ["dashboard" "workspaces" "windowtitle"];
-            middle = ["media" "clock"];
-            right = ["volume" "network" "bluetooth" "battery" "notifications"];
+            left = [
+              "dashboard"
+              "workspaces"
+              "windowtitle"
+            ];
+            middle = [
+              "media"
+              "clock"
+            ];
+            right = [
+              "volume"
+              "network"
+              "bluetooth"
+              "battery"
+              "notifications"
+            ];
           };
         };
       };
@@ -28,7 +41,7 @@
       };
       theme.font = {
         name = "CaskaydiaCove NF";
-        size = "16px";
+        size = "8px";
       };
     };
   };
