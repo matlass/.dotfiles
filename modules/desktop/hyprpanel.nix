@@ -24,8 +24,10 @@
           };
         };
       };
-      bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = true;
+      bar = {
+        launcher.autoDetectIcon = true;
+        workspaces.show_icons = true;
+      };
 
       menus = {
         dashboard = {
@@ -40,9 +42,12 @@
           weather.unit = "metric";
         };
       };
-      theme.font = {
-        name = "CaskaydiaCove NF";
-        size = "14px";
+      theme = {
+        font = {
+          name = "CaskaydiaCove NF";
+          size = "14px";
+        };
+        bar.transparent = true;
       };
     };
   };
