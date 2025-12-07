@@ -21,7 +21,6 @@ in {
         "nm-applet &"
         "eww daemon &"
         "blueman-applet &"
-        "waybar &"
         "hyprpaper &"
         "pkill swaync &"
         "swaync &"

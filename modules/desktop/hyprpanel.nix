@@ -29,18 +29,16 @@
         workspaces.show_icons = true;
       };
 
-      menus = {
-        dashboard = {
-          directories.enabled = false;
-          stats.enable_gpu = true;
+      menus.dashboard = {
+        directories.enabled = false;
+        stats.enable_gpu = true;
+      };
+      menus.clock = {
+        time = {
+          military = true;
+          hideSeconds = true;
         };
-        clock = {
-          time = {
-            military = true;
-            hideSeconds = true;
-          };
-          weather.unit = "metric";
-        };
+        weather.unit = "metric";
       };
       theme = {
         font = {
