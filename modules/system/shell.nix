@@ -31,5 +31,6 @@
     eza
     tree
     makedepend
+    virt-manager
   ];
 }
