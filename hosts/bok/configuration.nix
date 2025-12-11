@@ -25,6 +25,7 @@ in {
   boot.kernelParams = ["i915.enable_dpcd_backlight=3"];
   boot.kernelModules = ["kvm" "kvm_intel"];
   virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.extraGroups = ["wheel"];
 
   services.greetd = {
     enable = true;
