@@ -29,6 +29,9 @@
     flakeDir = paths.flakePath;
   };
   home.packages = with pkgs; [
-    oneko
+    virt-manager
+    qemu_kvm
+    libvirt
+    bridge-utils
   ];
 }
