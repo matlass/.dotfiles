@@ -29,9 +29,8 @@
     flakeDir = paths.flakePath;
   };
   home.packages = with pkgs; [
-    virt-manager
+    gnome-boxes
     qemu_kvm
     libvirt
-    bridge-utils
   ];
 }
