@@ -25,7 +25,6 @@ in {
   boot.kernelParams = ["i915.enable_dpcd_backlight=3"];
   boot.kernelModules = ["kvm" "kvm_intel"];
   virtualisation.libvirtd.enable = true;
-  virtualisation.libvirtd.extraGroups = ["wheel"];
 
   services.greetd = {
     enable = true;
@@ -131,7 +130,7 @@ in {
   users.users.matthieu = {
     isNormalUser = true;
     description = "matthieu";
-    extraGroups = ["networkmanager" "wheel" "input" "uinput"];
+    extraGroups = ["networkmanager" "wheel" "input" "uinput" "libvirtd"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
