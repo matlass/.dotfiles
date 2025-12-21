@@ -44,4 +44,5 @@
       ];
       extraSpecialArgs = {inherit inputs paths;};
     };
+  };
 }
