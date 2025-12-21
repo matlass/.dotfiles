@@ -44,22 +44,4 @@
       ];
       extraSpecialArgs = {inherit inputs paths;};
     };
-    # Environnement FHS pour SDL2
-    packages. ${system}.sdl-fhs = pkgs.buildFHSEnv {
-      name = "sdl-dev";
-      targetPkgs = pkgs:
-        with pkgs; [
-          gcc
-          gnumake
-          SDL2
-          SDL2_image
-        ];
-      runScript = "bash";
-      profile = ''
-        export C_INCLUDE_PATH="${pkgs.SDL2.dev}/include/SDL2:${pkgs.SDL2. dev}/include:${pkgs.SDL2_image}/include"
-        export LIBRARY_PATH="${pkgs.SDL2}/lib:${pkgs.SDL2_image}/lib"
-      '';
-    };
-    devShells.${system}.default = self.packages.${system}.sdl-fhs. env;
-  };
 }
