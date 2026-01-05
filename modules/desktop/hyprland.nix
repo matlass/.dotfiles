@@ -20,7 +20,6 @@ in {
       exec-once = [
         "hyprpanel"
         "nm-applet &"
-        "eww daemon &"
         "blueman-applet &"
         "hyprpaper &"
         "pkill swaync &"
