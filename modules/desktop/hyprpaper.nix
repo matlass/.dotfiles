@@ -10,7 +10,7 @@
     settings = {
       ipc = "on";
       splash = false;
-      splash_offset = 2.0;
+      splash_offset = 2;
       wallpaper = {
         monitor = "eDP-1";
         path = "${paths.nixPurpleImage}";
