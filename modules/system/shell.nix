@@ -11,6 +11,7 @@
       nru = "${paths.updateScript}";
       hrs = "${paths.homeManagerRebuildScript}";
       ls = "eza --icons=always --git --color=always";
+      ns = "nix-shell -p ";
     };
     autocd = true;
     enableCompletion = true;
