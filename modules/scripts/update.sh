@@ -8,19 +8,14 @@ USER_OUT="matthieu"
 
 cd "$FLAKE_PATH"
 
-echo "Staging all changes for git..."
-git add .
-
 echo "Enter your commit message: "
 read COMMIT_MSG
-
-git commit -m "$COMMIT_MSG"
 
 echo "Updating flake inputs in $FLAKE_PATH..."
 nix flake update
 
 git add .
-git commit -m "$COMMIT_MSG 1"
+git commit -m "$COMMIT_MSG"
 
 echo "Upgrading NixOS system ($HOST)..."
 sudo nixos-rebuild switch --flake "$FLAKE_PATH#$HOST"
