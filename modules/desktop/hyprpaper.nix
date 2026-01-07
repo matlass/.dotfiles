@@ -12,8 +12,9 @@
       splash = false;
       splash_offset = 2.0;
       wallpaper = {
+        monitor = "eDP-1"
         path = "${paths.nixPurpleImage}";
-        fit_mode = "cover"
+        fit_mode = "cover";
       };
     };
   };
