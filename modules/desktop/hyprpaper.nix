@@ -11,12 +11,10 @@
       ipc = "on";
       splash = false;
       splash_offset = 2.0;
-      preload = [
-        "${paths.nixPurpleImage}"
-      ];
-      wallpaper = [
-        ",${paths.nixPurpleImage}"
-      ];
+      wallpaper = {
+        path = "${paths.nixPurpleImage}";
+        fit_mode = "cover"
+      };
     };
   };
 }
