@@ -6,7 +6,7 @@ in {
       monitor = [",preferred,auto,1"];
 
       env = [
-        "HYPRCURSOE_THEME,pirate"
+        "HYPRCURSOE_THEME,Bibata-Modern-Ice"
         "HYPRCURSOR_SIZE,24"
       ];
 
