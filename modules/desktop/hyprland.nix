@@ -22,11 +22,9 @@ in {
         "nm-applet &"
         "blueman-applet &"
         "hyprpaper &"
-        "pkill swaync &"
         "swaync &"
         "kdeconnect-indicator &"
-        "discord"
-        "hyprctl dispatch workspaces 1"
+        "hyprctl setcursor Bibata-Modern-Ice 24"
       ];
 
       input = {
