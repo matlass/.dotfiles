@@ -1,5 +1,10 @@
 {...}: {
   programs.nvf.settings.vim = {
+    # Explicitly enable treesitter as a core plugin
+    treesitter = {
+      enable = true;
+    };
+
     languages = {
       enableTreesitter = true;
       enableFormat = true;
