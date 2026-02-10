@@ -32,5 +32,30 @@
     gnome-boxes
     qemu_kvm
     libvirt
+    fprintd
+    libfprint
+    vim
+    makedepend
+    hyprlock
+    swaynotificationcenter
+    btop
+    nautilus
+    networkmanagerapplet
+    unzip
+    zip
+    blueman
+    playerctl
+    pavucontrol
+    brightnessctl
+    libnotify
+    hyprshot
+    satty
+    beeper
+    discord
+    wofi
+    yazi
+    rapidraw
+    python3
+    protonup-ng
   ];
 }
