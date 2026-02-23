@@ -32,5 +32,6 @@
     eza
     tree
     makedepend
+    docker
   ];
 }
