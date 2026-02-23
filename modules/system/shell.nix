@@ -28,10 +28,11 @@
     };
   };
 
+  services.docker.enable = true;
+
   home.packages = with pkgs; [
     eza
     tree
     makedepend
-    docker
   ];
 }
