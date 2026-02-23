@@ -50,11 +50,8 @@
     libnotify
     hyprshot
     satty
-    beeper
     discord
     wofi
-    yazi
-    rapidraw
     python3
     protonup-ng
   ];
