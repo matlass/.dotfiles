@@ -135,6 +135,8 @@ in {
     jack.enable = true;
   };
 
+  services.docker.enable = true;
+
   # Delete generation from more that 7 days
   nix.gc = {
     automatic = true;
