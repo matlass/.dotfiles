@@ -10,12 +10,12 @@ in {
         "HYPRCURSOR_SIZE,24"
       ];
 
-      windowrulev2 = [
-        "workspace 1, class:^(kitty)$"
-        "workspace 2, class:^(brave-browser)$"
-        "workspace 9 silent, class:^(discord)$"
-        "workspace 10, class:^(Spotify)$"
-      ];
+      # windowrulev2 = [
+      #   "workspace 1, class:^(kitty)$"
+      #   "workspace 2, class:^(brave-browser)$"
+      #   "workspace 9 silent, class:^(discord)$"
+      #   "workspace 10, class:^(Spotify)$"
+      # ];
 
       exec-once = [
         "hyprpanel"
